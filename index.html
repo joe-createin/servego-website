@@ -15,6 +15,38 @@
   <meta property="og:image" content="assets/servego_logo.png">
   <meta property="og:url" content="https://servego.app">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b1020">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ServeGo",
+    "url": "https://servego.app",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ServeGo",
+      "url": "https://servego.app",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://servego.app/assets/servego_logo.png"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "ServeGo",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "BusinessApplication",
+    "url": "https://servego.app",
+    "image": "https://servego.app/assets/servego_logo.png"
+  }
+  </script>
 
   <style>
     :root{
@@ -67,6 +99,16 @@
       .hero-card,.cta{grid-template-columns:1fr}
       .hero{padding:28px 0}
     }
+
+    /* ==== entry animations (no layout change) ==== */
+    .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1; transform:none}
+    .reveal.delay-1{transition-delay:.08s}
+    .reveal.delay-2{transition-delay:.16s}
+    .reveal.delay-3{transition-delay:.24s}
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .reveal.show{opacity:1; transform:none; transition:none}
+    }
   </style>
 </head>
 <body>
@@ -95,22 +137,22 @@
 
   <!-- Hero -->
   <section class="container hero">
-    <div class="hero-card card">
+    <div class="hero-card card reveal show">
       <div style="padding:28px">
-        <span class="pill">Trusted services • Local pros</span>
-        <h1 class="h1">Book trusted local services in minutes</h1>
-        <p class="sub">ServeGo is your one-stop app for hiring verified local professionals you can trust. Book instantly, chat securely, and stay updated in real time—all from your phone. With hundreds of categories and a growing network of providers, ServeGo makes it effortless to find help whenever you need it. With simple booking, real-time updates, and built-in messaging, you can hire with confidence and track every step. Whether you need quick help or long-term services, ServeGo makes it seamless and secure.</p>
+        <span class="pill reveal">Trusted services • Local pros</span>
+        <h1 class="h1 reveal delay-1">Book trusted local services in minutes</h1>
+        <p class="sub reveal delay-2">ServeGo is your one-stop app for hiring verified local professionals you can trust. Book instantly, chat securely, and stay updated in real time—all from your phone. With hundreds of categories and a growing network of providers, ServeGo makes it effortless to find help whenever you need it. With simple booking, real-time updates, and built-in messaging, you can hire with confidence and track every step. Whether you need quick help or long-term services, ServeGo makes it seamless and secure.</p>
         <div style="height:14px"></div>
-        <div class="badges">
-          <a class="badge" href="#"><img src="assets/google-play.svg" alt=""><span>Get it on Google Play</span></a>
-          <a class="badge" href="#"><img src="assets/app-store.svg" alt=""><span>Coming to App Store</span></a>
+        <div class="badges reveal delay-3">
+          <a class="badge" href="#"><img src="assets/google-play.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><span>Get it on Google Play</span></a>
+          <a class="badge" href="#"><img src="assets/app-store.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><span>Coming to App Store</span></a>
         </div>
         <div style="height:14px"></div>
-        <div class="caption">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
+        <div class="caption reveal delay-3">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
       </div>
 
       <div style="padding:18px 18px 18px 0">
-        <div class="phone card">
+        <div class="phone card reveal delay-1">
           <img src="assets/signup.png" alt="ServeGo app screenshot: sign up" />
         </div>
         <div class="caption" style="margin-top:10px">“Sign up easily with Google or Email.”</div>
@@ -121,27 +163,15 @@
   <!-- Features -->
   <section id="features" class="container section">
     <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-      <div class="feature card">
-        <img src="assets/bolt.svg" alt="" width="28" height="28">
-        <h3>Fast booking</h3>
-        <p>Request a service, pick a time, and get matched—no phone calls needed.</p>
-      </div>
-      <div class="feature card">
-        <img src="assets/shield.svg" alt="" width="28" height="28">
-        <h3>Verified providers</h3>
-        <p>Profiles, ratings, and reviews help you choose with confidence.</p>
-      </div>
-      <div class="feature card">
-        <img src="assets/chat.svg" alt="" width="28" height="28">
-        <h3>Built-in messaging</h3>
-        <p>Coordinate details securely in the app. Your info stays private.</p>
-      </div>
+      <div class="feature card reveal"><img src="assets/bolt.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Fast booking</h3><p>Request a service, pick a time, and get matched—no phone calls needed.</p></div>
+      <div class="feature card reveal delay-1"><img src="assets/shield.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Verified providers</h3><p>Profiles, ratings, and reviews help you choose with confidence.</p></div>
+      <div class="feature card reveal delay-2"><img src="assets/chat.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Built-in messaging</h3><p>Coordinate details securely in the app. Your info stays private.</p></div>
     </div>
   </section>
 
-    <!-- How it works -->
+  <!-- How it works -->
   <section id="how" class="container section">
-    <div class="card" style="padding:28px">
+    <div class="card reveal" style="padding:28px">
       <h2 style="margin:.2rem 0 1rem">How it works</h2>
       <ol style="line-height:1.9;margin:0;padding-left:18px;color:var(--muted)">
         <li>Browse categories (cleaning, repairs, beauty, more).</li>
@@ -154,7 +184,7 @@
 
   <!-- Provider CTA -->
   <section id="provider" class="container section">
-    <div class="cta card" style="padding:26px">
+    <div class="cta card reveal" style="padding:26px">
       <div>
         <h2 style="margin:.2rem 0 1rem">ServeGo Provider — grow your business</h2>
         <p class="sub">Get nearby jobs, manage your schedule, track daily & weekly earnings, and receive instant job requests with flexible availability. Build your reputation with ratings & reviews and keep customers updated with real-time status and secure in-app messaging.</p>
@@ -162,12 +192,12 @@
         <a class="btn primary" href="#">Get the Provider app</a>
         <a class="btn ghost" href="mailto:support@servego.app" style="margin-left:8px">Talk to us</a>
       </div>
-      <div class="phone card"><img src="assets/providerhome.PNG" alt="Provider dashboard screenshot"></div>
+      <div class="phone card"><img src="assets/providerhome.PNG" alt="Provider dashboard screenshot" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
   <!-- Contact / Footer -->
-  <footer id="contact" class="container footer">
+  <footer id="contact" class="container footer reveal">
     <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
       <div>&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
       <div class="links">
@@ -189,6 +219,21 @@
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+
+    // IntersectionObserver to reveal elements on scroll
+    const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, {threshold: 0.12}) : null;
+
+    if(io){
+      document.querySelectorAll('.reveal').forEach(el=>{
+        // hero already visible gets .show in markup; others will reveal on scroll
+        if(!el.classList.contains('show')) io.observe(el);
+      });
+    } else {
+      // Fallback: show all if IO unsupported
+      document.querySelectorAll('.reveal').forEach(el=> el.classList.add('show'));
+    }
   </script>
 </body>
 </html>
