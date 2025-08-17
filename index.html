@@ -11,7 +11,7 @@
 
   <!-- Social share -->
   <meta property="og:title" content="ServeGo — Book trusted local services">
-  <meta property="og:description" content="ServeGo is your one-stop app for hiring verified local professionals you can trust. Book instantly, chat securely, and stay updated in real time—all from your phone. With hundreds of categories and a growing network of providers, ServeGo makes it effortless to find help whenever you need it. With simple booking, real-time updates, and built-in messaging, you can hire with confidence and track every step. Whether you need quick help or long-term services, ServeGo makes it seamless and secure.">
+  <meta property="og:description" content="Connect with verified local providers. Fast booking, real-time updates, and secure messaging">
   <meta property="og:image" content="assets/servego_logo.png">
   <meta property="og:url" content="https://servego.app">
   <meta name="twitter:card" content="summary_large_image">
@@ -49,7 +49,24 @@
     .cta{display:grid;gap:16px;grid-template-columns:1.2fr .8fr;align-items:center}
     .footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.95rem}
     .links{display:flex;gap:16px;flex-wrap:wrap}
-    @media (max-width:900px){.hero-card,.cta{grid-template-columns:1fr}.hero{padding:28px 0}}
+
+    /* Mobile nav */
+    .nav-toggle{
+      display:none; align-items:center; justify-content:center; gap:8px;
+      padding:.6rem .8rem; border:1px solid #2d3560; background:#0f1530;
+      color:var(--text); border-radius:12px;
+    }
+    .nav-toggle svg{width:22px;height:22px}
+    @media (max-width:900px){
+      header.container{flex-wrap:wrap}
+      .nav-toggle{display:inline-flex}
+      .links{display:none; width:100%; padding-top:10px}
+      .links.open{display:flex}
+    }
+    @media (max-width:900px){
+      .hero-card,.cta{grid-template-columns:1fr}
+      .hero{padding:28px 0}
+    }
   </style>
 </head>
 <body>
@@ -60,7 +77,16 @@
       <img src="assets/servego_logo.png" alt="ServeGo logo" width="36" height="36" />
       <strong style="letter-spacing:.2px">ServeGo</strong>
     </div>
-    <nav class="links">
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primaryNav">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Menu
+    </button>
+
+    <nav id="primaryNav" class="links" role="navigation" aria-label="Primary">
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
@@ -83,7 +109,6 @@
         <div class="caption">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
       </div>
 
-      <!-- Real signup screenshot -->
       <div style="padding:18px 18px 18px 0">
         <div class="phone card">
           <img src="assets/signup.png" alt="ServeGo app screenshot: sign up" />
@@ -114,7 +139,7 @@
     </div>
   </section>
 
-  <!-- How it works -->
+    <!-- How it works -->
   <section id="how" class="container section">
     <div class="card" style="padding:28px">
       <h2 style="margin:.2rem 0 1rem">How it works</h2>
@@ -132,12 +157,11 @@
     <div class="cta card" style="padding:26px">
       <div>
         <h2 style="margin:.2rem 0 1rem">ServeGo Provider — grow your business</h2>
-        <p class="sub">Get nearby jobs, manage your schedule, and track daily & weekly earnings with ease. Build your reputation, grow your client base, and take full control of your service business—all inside one simple app.</p>
+        <p class="sub">Get nearby jobs, manage your schedule, track daily & weekly earnings, and receive instant job requests with flexible availability. Build your reputation with ratings & reviews and keep customers updated with real-time status and secure in-app messaging.</p>
         <div style="height:12px"></div>
         <a class="btn primary" href="#">Get the Provider app</a>
         <a class="btn ghost" href="mailto:support@servego.app" style="margin-left:8px">Talk to us</a>
       </div>
-      <!-- Real provider screenshot -->
       <div class="phone card"><img src="assets/providerhome.PNG" alt="Provider dashboard screenshot"></div>
     </div>
   </section>
@@ -154,6 +178,17 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
