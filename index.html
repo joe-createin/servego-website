@@ -1,12 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ServeGo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ServeGo — Book trusted local services</title>
+  <meta name="description" content="ServeGo connects customers with trusted local providers. Simple booking, real-time updates, and secure messaging." />
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121833; --muted:#7b86a8; --text:#eaf0ff;
+      --brand:#4aa8ff; --brand2:#6ad5ff; --accent:#8cf8d3;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    .btn{display:inline-flex;gap:.6rem;align-items:center;padding:.9rem 1.1rem;border-radius:12px;border:1px solid #2a3358;background:#1a2144;color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#061227; border:0; font-weight:700}
+    .btn.ghost{background:transparent;border-color:#2d3560}
+    .grid{display:grid;gap:22px}
+    .hero{padding:52px 0}
+    .hero-card{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:.35rem .7rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--muted);font-size:.85rem}
+    .h1{font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.1;margin:.7rem 0 1rem}
+    .sub{color:var(--muted);font-size:1.05rem}
+    .phone{aspect-ratio:9/19;border-radius:28px;border:10px solid #0f1530;overflow:hidden}
+    .phone > img{width:100%;height:100%;object-fit:cover}
+    .section{padding:52px 0}
+    .feature{padding:20px}
+    .feature h3{margin:.4rem 0 .3rem}
+    .feature p{color:var(--muted);margin:0}
+    .caption{color:var(--muted);font-size:.9rem}
+    .badges{display:flex;gap:12px;flex-wrap:wrap}
+    .badge{height:44px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0e1330;padding:0 12px;display:flex;align-items:center;gap:10px}
+    .badge img{height:28px}
+    .cta{display:grid;gap:16px;grid-template-columns:1.2fr .8fr;align-items:center}
+    .footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.95rem}
+    .links{display:flex;gap:16px;flex-wrap:wrap}
+    @media (max-width:900px){.hero-card,.cta{grid-template-columns:1fr}.hero{padding:28px 0}}
+  </style>
 </head>
-<body style="font-family:sans-serif;text-align:center;padding:50px;">
-  <h1>🚀 Welcome to ServeGo</h1>
-  <p>Your trusted provider and customer platform. Coming soon!</p>
+<body>
+
+  <!-- Header -->
+  <header class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="assets/logo.svg" alt="ServeGo logo" width="36" height="36" />
+      <strong style="letter-spacing:.2px">ServeGo</strong>
+    </div>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="container hero">
+    <div class="hero-card card">
+      <div style="padding:28px">
+        <span class="pill">Trusted services • Local pros</span>
+        <h1 class="h1">Book trusted local services in minutes</h1>
+        <p class="sub">ServeGo connects customers with verified providers. Simple booking, real-time status, and secure messaging.</p>
+        <div style="height:14px"></div>
+        <div class="badges">
+          <!-- Replace # with your real links later -->
+          <a class="badge" href="#"><img src="assets/google-play.svg" alt=""><span>Get it on Google Play</span></a>
+          <a class="badge" href="#"><img src="assets/app-store.svg" alt=""><span>Coming to App Store</span></a>
+        </div>
+        <div style="height:14px"></div>
+        <div class="caption">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
+      </div>
+
+      <!-- Phone mock (use your real screenshot) -->
+      <div style="padding:18px 18px 18px 0">
+        <div class="phone card">
+          <img src="assets/screens/signup.png" alt="ServeGo app screenshot: sign up" />
+        </div>
+        <div class="caption" style="margin-top:10px">“Sign up easily with Google or Email.”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="container section">
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="feature card">
+        <img src="assets/icons/bolt.svg" alt="" width="28" height="28">
+        <h3>Fast booking</h3>
+        <p>Request a service, pick a time, and get matched—no phone calls needed.</p>
+      </div>
+      <div class="feature card">
+        <img src="assets/icons/shield.svg" alt="" width="28" height="28">
+        <h3>Verified providers</h3>
+        <p>Profiles, ratings, and reviews help you choose with confidence.</p>
+      </div>
+      <div class="feature card">
+        <img src="assets/icons/chat.svg" alt="" width="28" height="28">
+        <h3>Built-in messaging</h3>
+        <p>Coordinate details securely in the app. Your info stays private.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="container section">
+    <div class="card" style="padding:28px">
+      <h2 style="margin:.2rem 0 1rem">How it works</h2>
+      <ol style="line-height:1.9;margin:0;padding-left:18px;color:var(--muted)">
+        <li>Browse categories (cleaning, repairs, beauty, more).</li>
+        <li>Pick a provider and time that fits your schedule.</li>
+        <li>Track status and chat in real time.</li>
+        <li>Rate your experience to help the community.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Provider CTA -->
+  <section id="provider" class="container section">
+    <div class="cta card" style="padding:26px">
+      <div>
+        <h2 style="margin:.2rem 0 1rem">ServeGo Provider — grow your business</h2>
+        <p class="sub">Get nearby jobs, manage your schedule, and track daily & weekly earnings.</p>
+        <div style="height:12px"></div>
+        <a class="btn primary" href="#">Get the Provider app</a>
+        <a class="btn ghost" href="mailto:support@servego.app" style="margin-left:8px">Talk to us</a>
+      </div>
+      <div class="phone card"><img src="assets/screens/home-dashboard.png" alt="Provider dashboard screenshot"></div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="container footer">
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div>&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
+      <div class="links">
+        <a href="https://privacy.servego.app/">Privacy</a>
+        <a href="https://privacy.servego.app/delete-account">Delete account</a>
+        <a href="mailto:support@servego.app">support@servego.app</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
