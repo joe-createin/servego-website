@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="title">How Providers Get Verified</title>
+  <meta name="description" data-i18n="metaDesc"
+        content="Basics of our verification approach and how we keep the marketplace safe.">
+  <style>
+    :root { --bg:#0b1020; --card:#121833; --text:#eaf0ff; --muted:#a2aed0; --brand:#4aa8ff; --radius:16px; --shadow:0 8px 28px rgba(0,0,0,.35) }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.7}
+    header{padding:18px 24px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;gap:14px;align-items:center}
+    .lang{margin-left:auto;position:absolute;right:18px}
+    .lang button{background:#0f1530;border:1px solid rgba(255,255,255,.18);color:var(--text);padding:.35rem .6rem;border-radius:10px;cursor:pointer}
+    .container{max-width:820px;margin:0 auto;padding:48px 20px;opacity:0;transform:translateY(18px);animation:fadeUp .8s ease forwards}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}
+    h1{font-size:clamp(2rem,3.5vw,2.6rem);margin:0 0 1.2rem;background:linear-gradient(135deg,var(--brand),#6ad5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    h2{margin:1.4rem 0 .6rem}
+    p{color:var(--muted);margin:.9rem 0 1.1rem;font-size:1.05rem}
+    ul{margin:.3rem 0 1.2rem 1.2rem;color:var(--muted)}
+    li{margin:.4rem 0}
+    .steps{counter-reset:step}
+    .steps li{list-style:none;position:relative;padding-left:34px}
+    .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:.1rem;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:50%;background:#0f1530;border:1px solid rgba(255,255,255,.18);color:#cfe5ff;font-size:.9rem}
+    a.back{display:inline-block;margin-top:2rem;color:var(--brand);text-decoration:none;font-weight:500}
+    a.back:hover{text-decoration:underline}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div>ServeGo <span data-i18n="blog">Blog</span></div>
+    <div class="lang" aria-label="Language switcher">
+      <button id="to-en" type="button">EN</button>
+      <button id="to-vi" type="button">VI</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h1 data-i18n="h1">How Providers Get Verified</h1>
+
+      <p data-i18n="intro">
+        Verification keeps ServeGo safe and trustworthy. Before providers can accept bookings, we verify
+        identity, skills, and reliability to protect users and highlight great professionals.
+      </p>
+
+      <h2 data-i18n="whyTitle">Why verification matters</h2>
+      <p data-i18n="whyBody">
+        It reduces fraud, protects users, and helps quality providers stand out with trust and transparency.
+      </p>
+
+      <h2 data-i18n="whatTitle">What we check</h2>
+      <ul data-i18n="whatList">
+        <li><strong>Identity</strong> — government ID or equivalent</li>
+        <li><strong>Contact</strong> — phone & email verification</li>
+        <li><strong>Profile completeness</strong> — photo, bio, categories</li>
+        <li><strong>Experience</strong> — portfolio/work photos or references</li>
+        <li><strong>Basic safety flags</strong> — region-dependent checks</li>
+      </ul>
+
+      <h2 data-i18n="howTitle">How the process works</h2>
+      <ul class="steps" data-i18n="howList">
+        <li>Submit profile and required documents.</li>
+        <li>Automated + manual review for accuracy and risk.</li>
+        <li>First bookings are monitored for quality signals.</li>
+        <li>Ongoing checks: ratings, response rate, cancellations.</li>
+      </ul>
+
+      <h2 data-i18n="safetyTitle">Ongoing safety</h2>
+      <p data-i18n="safetyBody">
+        We provide in-app reporting, periodic re-verification, fraud detection, and category restrictions
+        if needed. Our goal is a fair, accountable marketplace.
+      </p>
+
+      <h2 data-i18n="privacyTitle">Your privacy</h2>
+      <p data-i18n="privacyBody">
+        Verification data is stored securely, used only to confirm eligibility, and never shown publicly.
+      </p>
+
+      <h2 data-i18n="tipsTitle">Tips for faster approval</h2>
+      <ul data-i18n="tipsList">
+        <li>Use a clear headshot and accurate legal name.</li>
+        <li>Upload real work photos (no stock images).</li>
+        <li>Write a concise, honest bio with your specialties.</li>
+        <li>Respond quickly and keep availability up to date.</li>
+      </ul>
+
+      <a href="../index.html#blog" class="back" data-i18n="back">← Back to Updates</a>
+    </div>
+  </div>
+
+  <script>
+    const dict = {
+      en: {
+        title: "How Providers Get Verified",
+        metaDesc: "Basics of our verification approach and how we keep the marketplace safe.",
+        blog: "Blog",
+        h1: "How Providers Get Verified",
+        intro: "Verification keeps ServeGo safe and trustworthy. Before providers can accept bookings, we verify identity, skills, and reliability to protect users and highlight great professionals.",
+        whyTitle: "Why verification matters",
+        whyBody: "It reduces fraud, protects users, and helps quality providers stand out with trust and transparency.",
+        whatTitle: "What we check",
+        whatList: `<li><strong>Identity</strong> — government ID or equivalent</li>
+                   <li><strong>Contact</strong> — phone & email verification</li>
+                   <li><strong>Profile completeness</strong> — photo, bio, categories</li>
+                   <li><strong>Experience</strong> — portfolio/work photos or references</li>
+                   <li><strong>Basic safety flags</strong> — region-dependent checks</li>`,
+        howTitle: "How the process works",
+        howList: `<li>Submit profile and required documents.</li>
+                  <li>Automated + manual review for accuracy and risk.</li>
+                  <li>First bookings are monitored for quality signals.</li>
+                  <li>Ongoing checks: ratings, response rate, cancellations.</li>`,
+        safetyTitle: "Ongoing safety",
+        safetyBody: "We provide in-app reporting, periodic re-verification, fraud detection, and category restrictions if needed. Our goal is a fair, accountable marketplace.",
+        privacyTitle: "Your privacy",
+        privacyBody: "Verification data is stored securely, used only to confirm eligibility, and never shown publicly.",
+        tipsTitle: "Tips for faster approval",
+        tipsList: `<li>Use a clear headshot and accurate legal name.</li>
+                   <li>Upload real work photos (no stock images).</li>
+                   <li>Write a concise, honest bio with your specialties.</li>
+                   <li>Respond quickly and keep availability up to date.</li>`,
+        back: "← Back to Updates"
+      },
+      vi: {
+        title: "Quy trình xác minh nhà cung cấp",
+        metaDesc: "Tổng quan cách chúng tôi xác minh và giữ an toàn cho marketplace.",
+        blog: "Blog",
+        h1: "Quy trình xác minh nhà cung cấp",
+        intro: "Xác minh giúp ServeGo an toàn và đáng tin cậy. Trước khi nhà cung cấp nhận đặt lịch, chúng tôi xác thực danh tính, kỹ năng và độ tin cậy để bảo vệ người dùng và tôn vinh những chuyên gia chất lượng.",
+        whyTitle: "Vì sao cần xác minh",
+        whyBody: "Giảm gian lận, bảo vệ người dùng và giúp nhà cung cấp chất lượng nổi bật với sự minh bạch và tin cậy.",
+        whatTitle: "Chúng tôi kiểm tra những gì",
+        whatList: `<li><strong>Danh tính</strong> — CMND/CCCD/hộ chiếu hoặc tương đương</li>
+                   <li><strong>Liên hệ</strong> — xác thực số điện thoại & email</li>
+                   <li><strong>Hồ sơ đầy đủ</strong> — ảnh đại diện, mô tả, hạng mục dịch vụ</li>
+                   <li><strong>Kinh nghiệm</strong> — bộ ảnh công việc/portfolio hoặc tham chiếu</li>
+                   <li><strong>Các cờ cảnh báo cơ bản</strong> — kiểm tra tùy theo khu vực</li>`,
+        howTitle: "Quy trình thực hiện",
+        howList: `<li>Gửi hồ sơ và giấy tờ cần thiết.</li>
+                  <li>Rà soát tự động + thủ công để đảm bảo chính xác và rủi ro thấp.</li>
+                  <li>Các đơn đầu tiên được theo dõi tín hiệu chất lượng.</li>
+                  <li>Theo dõi liên tục: đánh giá, tỉ lệ phản hồi, hủy lịch.</li>`,
+        safetyTitle: "An toàn liên tục",
+        safetyBody: "Có công cụ báo cáo trong ứng dụng, xác minh lại định kỳ, phát hiện gian lận và hạn chế hạng mục khi cần. Mục tiêu là một marketplace công bằng và có trách nhiệm.",
+        privacyTitle: "Quyền riêng tư",
+        privacyBody: "Dữ liệu xác minh được lưu trữ an toàn, chỉ dùng để xác nhận đủ điều kiện và không bao giờ hiển thị công khai.",
+        tipsTitle: "Mẹo duyệt nhanh",
+        tipsList: `<li>Dùng ảnh chân dung rõ nét và tên pháp lý chính xác.</li>
+                   <li>Tải ảnh công việc thật (không dùng ảnh stock).</li>
+                   <li>Viết mô tả ngắn gọn, trung thực, nêu rõ chuyên môn.</li>
+                   <li>Phản hồi nhanh và cập nhật lịch làm việc thường xuyên.</li>`,
+        back: "← Quay lại cập nhật"
+      }
+    };
+
+    const els = document.querySelectorAll("[data-i18n]");
+    function setLang(lng){
+      const t = dict[lng] || dict.en;
+      els.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.title = t.title;
+      document.documentElement.lang = (lng === "vi" ? "vi" : "en");
+      localStorage.setItem("sg_lang", lng);
+    }
+
+    // prefer stored choice; otherwise auto-detect
+    const stored = localStorage.getItem("sg_lang");
+    const auto = ((navigator.language || "").toLowerCase().startsWith("vi")) ? "vi" : "en";
+    setLang(stored ? stored : auto);
+
+    // buttons
+    document.getElementById("to-en").onclick = () => setLang("en");
+    document.getElementById("to-vi").onclick = () => setLang("vi");
+  </script>
+</body>
+</html>
