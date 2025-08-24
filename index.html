@@ -16,6 +16,8 @@
   <meta property="og:url" content="https://servego.app">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0b1020">
+  <meta name="apple-itunes-app" content="app-id=YOUR_APPLE_APP_ID">
+  <link rel="preload" as="image" href="assets/signup.png" imagesrcset="assets/signup.png" imagesizes="(max-width:900px) 100vw, 50vw">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -59,6 +61,9 @@
     a{color:var(--brand);text-decoration:none}
     .container{max-width:1080px;margin:0 auto;padding:24px}
     .btn{display:inline-flex;gap:.6rem;align-items:center;padding:.9rem 1.1rem;border-radius:12px;border:1px solid #2a3358;background:#1a2144;color:var(--text)}
+    .btn{transition:transform .18s ease, box-shadow .18s ease}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.25)}
+    :focus-visible{outline:2px solid var(--brand2); outline-offset:3px}
     .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#061227; border:0; font-weight:700}
     .btn.ghost{background:transparent;border-color:#2d3560}
     .grid{display:grid;gap:22px}
@@ -220,6 +225,7 @@
       <a href="#blog">Blog</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <button id="langToggle" class="btn ghost" style="padding:.4rem .7rem;font-size:.9rem">EN / VI</button>
     </nav>
   </header>
 
@@ -357,6 +363,14 @@
       <div class="card reveal" style="padding:26px">
         <h2 style="margin:.2rem 0 1rem">Contact us</h2>
         <p class="lead">Have a question or partnership idea? Send us a message — we usually reply within 1–2 business days.</p>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST">
+          <input class="input" type="text" name="name" placeholder="Your name" required>
+          <input class="input" type="email" name="email" placeholder="Your email" required>
+          <textarea class="input" name="message" rows="5" placeholder="Your message" required></textarea>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+        <!-- Previous mailto-based form commented out -->
+        <!--
         <form id="contactForm">
           <input class="input" type="text" name="name" placeholder="Your name" required>
           <input class="input" type="email" name="email" placeholder="Your email" required>
@@ -370,8 +384,18 @@
             </div>
           </div>
         </form>
+        -->
       </div>
     </section>
+  </div>
+
+  <!-- Trust & Safety Strip -->
+  <div class="band">
+    <div class="container" style="display:flex;gap:22px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:.95rem;padding:20px 0">
+      <div>✅ No fees for users</div>
+      <div>🔒 Secure messaging</div>
+      <div>⭐ Verified providers</div>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -451,19 +475,18 @@
     } else {
       document.querySelectorAll('.reveal').forEach(el=> el.classList.add('show'));
     }
-
-    // Contact form: open mail client with prefilled message
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = new FormData(form);
-      const name = encodeURIComponent(data.get('name'));
-      const email = encodeURIComponent(data.get('email'));
-      const message = encodeURIComponent(data.get('message'));
-      const subject = encodeURIComponent('ServeGo website inquiry');
-      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(message)}`);
-      window.location.href = `mailto:support@servego.app?subject=${subject}&body=${body}`;
-    });
+  </script>
+  <script>
+    document.getElementById('langToggle').onclick = () => {
+      const isVi = (localStorage.getItem('lang')||'').startsWith('vi');
+      const next = isVi ? 'en' : 'vi';
+      localStorage.setItem('lang', next);
+      location.reload();
+    };
+    (function(){
+      const pref = localStorage.getItem('lang');
+      if(pref){ document.documentElement.lang = pref; }
+    })();
   </script>
 </body>
 </html>
