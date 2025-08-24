@@ -518,7 +518,12 @@
           type_want: 'Bạn muốn đặt dịch vụ?'
         }
       };
-      const lang = (navigator.language||'').toLowerCase();
+      // Respect saved preference first, then browser language
+      const stored = (localStorage.getItem('lang')||'').toLowerCase();
+      const browser = (navigator.language||'').toLowerCase();
+      const lang = stored || browser;
+      // Reflect on html lang attribute for accessibility/SEO
+      document.documentElement.lang = lang.startsWith('vi') ? 'vi' : 'en';
       if(lang.startsWith('vi')){
         document.querySelectorAll('[data-i18n]').forEach(el=>{
           const k = el.getAttribute('data-i18n');
@@ -592,14 +597,19 @@
   </script>
   <script>
     document.getElementById('langToggle').onclick = () => {
-      const isVi = (localStorage.getItem('lang')||'').startsWith('vi');
-      const next = isVi ? 'en' : 'vi';
+      const cur = (localStorage.getItem('lang') || (document.documentElement.lang || '')).toLowerCase();
+      const next = cur.startsWith('vi') ? 'en' : 'vi';
       localStorage.setItem('lang', next);
+      // Simple approach: reload so all text picks up new language
       location.reload();
     };
     (function(){
-      const pref = localStorage.getItem('lang');
-      if(pref){ document.documentElement.lang = pref; }
+      const pref = (localStorage.getItem('lang')||'').toLowerCase();
+      if(pref){
+        document.documentElement.lang = pref;
+      } else if((navigator.language||'').toLowerCase().startsWith('vi')){
+        document.documentElement.lang = 'vi';
+      }
     })();
   </script>
 </body>
