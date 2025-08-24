@@ -127,6 +127,52 @@
     @media (max-width:900px){
       .blog-grid{grid-template-columns:1fr}
     }
+
+    /* ======================== */
+    /* Brand wordmark + sparkles */
+    /* ======================== */
+    .brand-hero{position:relative; margin-bottom:10px}
+    .wordmark{
+      position:relative; /* for shimmer positioning */
+      font-size:clamp(2.6rem, 7vw, 6rem);
+      line-height:.95;
+      letter-spacing:.06em;
+      margin:0 0 .4rem 0;
+      font-weight:800;
+      background:linear-gradient(90deg,#8cf8d3 0%, #6ad5ff 40%, #4aa8ff 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      filter:drop-shadow(0 6px 18px rgba(74,168,255,.15));
+    }
+    .wordmark:after{
+      content:""; position:absolute; left:-10%; top:0; height:100%; width:30%;
+      background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,.28) 50%, transparent 100%);
+      transform:skewX(-20deg); animation:shimmer 3.8s ease-in-out infinite; pointer-events:none;
+    }
+    @keyframes shimmer{ 0%{transform:translateX(-40%) skewX(-20deg)} 60%{transform:translateX(260%) skewX(-20deg)} 100%{transform:translateX(260%) skewX(-20deg)} }
+
+    .sparkles{position:absolute; inset:0; overflow:visible; pointer-events:none}
+    .sparkles i{
+      position:absolute; bottom:-6px; width:6px; height:6px; border-radius:50%;
+      background:radial-gradient(circle, #eaf0ff 0%, rgba(234,240,255,.2) 70%, transparent 100%);
+      opacity:0; filter:blur(.2px); animation:float 4.5s linear infinite;
+    }
+    .sparkles i:nth-child(1){left:8%;  animation-delay:.2s;  width:4px; height:4px}
+    .sparkles i:nth-child(2){left:18%; animation-delay:1.1s}
+    .sparkles i:nth-child(3){left:32%; animation-delay:.6s; width:5px; height:5px}
+    .sparkles i:nth-child(4){left:48%; animation-delay:1.8s}
+    .sparkles i:nth-child(5){left:64%; animation-delay:.9s; width:7px; height:7px}
+    .sparkles i:nth-child(6){left:78%; animation-delay:1.4s}
+    .sparkles i:nth-child(7){left:12%; animation-delay:2.1s}
+    .sparkles i:nth-child(8){left:27%; animation-delay:2.6s; width:5px; height:5px}
+    .sparkles i:nth-child(9){left:41%; animation-delay:3.0s}
+    .sparkles i:nth-child(10){left:57%; animation-delay:2.3s}
+    .sparkles i:nth-child(11){left:71%; animation-delay:3.2s}
+    .sparkles i:nth-child(12){left:86%; animation-delay:2.8s}
+    @keyframes float{ 0%{transform:translateY(0) scale(.9); opacity:0} 10%{opacity:.9} 100%{transform:translateY(-110px) scale(1.1); opacity:0} }
+
+    @media (prefers-reduced-motion:reduce){
+      .wordmark:after, .sparkles i{animation:none}
+    }
   </style>
 </head>
 <body>
@@ -160,6 +206,15 @@
   <section class="container hero">
     <div class="hero-card card reveal show">
       <div style="padding:28px">
+        <!-- Brand wordmark + subtle sparkles -->
+        <div class="brand-hero reveal">
+          <h1 class="wordmark">SERVEGO</h1>
+          <div class="sparkles" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+
         <span class="pill reveal">Trusted services • Local pros</span>
         <h1 class="h1 reveal delay-1">Book trusted local services in minutes</h1>
         <p class="sub reveal delay-2">ServeGo is your one-stop app for hiring verified local professionals you can trust. Book instantly, chat securely, and stay updated in real time—all from your phone. With hundreds of categories and a growing network of providers, ServeGo makes it effortless to find help whenever you need it. With simple booking, real-time updates, and built-in messaging, you can hire with confidence and track every step. Whether you need quick help or long-term services, ServeGo makes it seamless and secure.</p>
