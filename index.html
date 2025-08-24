@@ -83,15 +83,15 @@
     .badge.callout{position:relative}
     @keyframes sg-jump-shake {
       0%,100%{transform:translate(0,0) rotate(0)}
-      10%{transform:translate(-2px,-2px) rotate(-1deg)}
-      20%{transform:translate(3px,-6px) rotate(1deg)}
-      30%{transform:translate(-3px,-2px) rotate(-1deg)}
-      40%{transform:translate(4px,-5px) rotate(1deg)}
-      50%{transform:translate(-2px,-8px) rotate(-1deg)}
-      60%{transform:translate(2px,-3px) rotate(1deg)}
-      70%{transform:translate(-1px,-5px) rotate(-1deg)}
-      80%{transform:translate(1px,-2px) rotate(1deg)}
-      90%{transform:translate(-1px,-1px) rotate(0)}
+      10%{transform:translate(-2px,-3px) rotate(-1deg)}
+      20%{transform:translate(3px,-14px) rotate(1.2deg) scale(1.02)}
+      30%{transform:translate(-3px,-4px) rotate(-1deg)}
+      40%{transform:translate(5px,-10px) rotate(1deg)}
+      50%{transform:translate(-2px,-16px) rotate(-1.2deg) scale(1.03)}
+      60%{transform:translate(2px,-6px) rotate(1deg)}
+      70%{transform:translate(-1px,-12px) rotate(-1deg)}
+      80%{transform:translate(1px,-5px) rotate(1deg)}
+      90%{transform:translate(-1px,-2px) rotate(0)}
     }
     .badge.callout.shake{animation:sg-jump-shake .8s ease-in-out 1}
     .badge.callout .tip{
@@ -528,7 +528,7 @@
     })();
   </script>
   <script>
-    // Typing effect for the prompt above badges (replays every 30s)
+    // Typing effect for the prompt above badges (replays every 5s)
     (function(){
       var el = document.getElementById('typeMsg');
       if(!el) return;
@@ -544,24 +544,25 @@
         })();
       }
       typeOnce();
-      setInterval(typeOnce, 30000);
+      setInterval(typeOnce, 5000);
     })();
   </script>
-    // Periodic attention animation for the App Store badge
-    (function(){
-      var b = document.getElementById('appStoreBadge');
-      if(!b) return;
-      function ping(){
-        b.classList.add('shake');
-        setTimeout(function(){ b.classList.remove('shake'); }, 800);
-      }
-      // Run once on load, then every 6s; also when tab comes back into view
-      ping();
-      var timer = setInterval(ping, 6000);
-      document.addEventListener('visibilitychange', function(){
-        if(!document.hidden) ping();
-      });
-    })();
+  <script>
+  // Periodic attention animation for the App Store badge
+  (function(){
+    var b = document.getElementById('appStoreBadge');
+    if(!b) return;
+    function ping(){
+      b.classList.add('shake');
+      setTimeout(function(){ b.classList.remove('shake'); }, 800);
+    }
+    // Run once on load, then every 5s; also when tab comes back into view
+    ping();
+    var timer = setInterval(ping, 5000);
+    document.addEventListener('visibilitychange', function(){
+      if(!document.hidden) ping();
+    });
+  })();
   </script>
   <script>
     // Year
