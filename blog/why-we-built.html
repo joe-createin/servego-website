@@ -3,92 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Why We Built ServeGo</title>
+  <title data-i18n="title">Why We Built ServeGo</title>
+  <meta name="description" data-i18n="metaDesc"
+        content="Why we created ServeGo to make hiring trusted local services simple, safe, and fair." />
   <style>
-    :root {
-      --bg: #0b1020;
-      --card: #121833;
-      --text: #eaf0ff;
-      --muted: #a2aed0;
-      --brand: #4aa8ff;
-      --radius: 16px;
-      --shadow: 0 8px 28px rgba(0,0,0,.35);
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: Inter, system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.7;
-    }
-    header {
-      padding: 18px 24px;
-      background: rgba(255,255,255,.02);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: .5px;
-    }
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 48px 20px;
-      animation: fadeUp .8s ease forwards;
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    h1 {
-      font-size: clamp(2rem, 3.5vw, 2.6rem);
-      margin-bottom: 1.2rem;
-      background: linear-gradient(135deg, var(--brand), #6ad5ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p {
-      color: var(--muted);
-      margin-bottom: 1.3rem;
-      font-size: 1.05rem;
-    }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 32px;
-    }
-    a.back {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--brand);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    a.back:hover {
-      text-decoration: underline;
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: none; }
-    }
+    :root { --bg:#0b1020; --card:#121833; --text:#eaf0ff; --muted:#a2aed0; --brand:#4aa8ff; --radius:16px; --shadow:0 8px 28px rgba(0,0,0,.35) }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.7}
+    header{padding:18px 24px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;gap:14px;align-items:center}
+    .lang{margin-left:auto;position:absolute;right:18px}
+    .lang button{background:#0f1530;border:1px solid rgba(255,255,255,.18);color:var(--text);padding:.35rem .6rem;border-radius:10px;cursor:pointer}
+    .container{max-width:820px;margin:0 auto;padding:48px 20px;opacity:0;transform:translateY(18px);animation:fadeUp .8s ease forwards}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}
+    h1{font-size:clamp(2rem,3.5vw,2.6rem);margin:0 0 1.2rem;background:linear-gradient(135deg,var(--brand),#6ad5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    p{color:var(--muted);margin:.9rem 0 1.1rem;font-size:1.05rem}
+    a.back{display:inline-block;margin-top:2rem;color:var(--brand);text-decoration:none;font-weight:500}
+    a.back:hover{text-decoration:underline}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header>ServeGo Blog</header>
+  <header>
+    <div>ServeGo <span data-i18n="blog">Blog</span></div>
+    <div class="lang" aria-label="Language switcher">
+      <button id="to-en" type="button">EN</button>
+      <button id="to-vi" type="button">VI</button>
+    </div>
+  </header>
+
   <div class="container">
     <div class="card">
-      <h1>Why We Built ServeGo</h1>
-      <p>Finding trusted local services has always been a challenge. Whether it’s a last-minute plumber, a reliable tutor, or a skilled stylist, people often rely on word of mouth or random searches — and the results are inconsistent.</p>
+      <h1 data-i18n="h1">Why We Built ServeGo</h1>
 
-      <p>We built <strong>ServeGo</strong> to make this process seamless, safe, and trustworthy. By connecting users with verified service providers, we help people get help faster while giving providers new opportunities to grow their business.</p>
+      <p data-i18n="p1">
+        Finding trusted local services has always been a challenge. Whether it’s a last-minute plumber,
+        a reliable tutor, or a skilled stylist, people often rely on word of mouth or random searches —
+        and the results are inconsistent.
+      </p>
 
-      <p>With ServeGo, you can book instantly, chat securely, and track updates in real time. For providers, it’s a chance to showcase their skills, build reputation with ratings and reviews, and reach more customers without expensive marketing.</p>
+      <p data-i18n="p2">
+        We built <strong>ServeGo</strong> to make this process seamless, safe, and trustworthy.
+        By connecting users with verified service providers, we help people get help faster while
+        giving providers new opportunities to grow their business.
+      </p>
 
-      <p>Our mission is simple: <em>empower communities by making services accessible and fair</em>. Whether you’re a customer or a provider, ServeGo makes it easier to connect, work, and trust.</p>
+      <p data-i18n="p3">
+        With ServeGo, you can book instantly, chat securely, and track updates in real time. For providers,
+        it’s a chance to showcase their skills, build reputation with ratings and reviews, and reach more
+        customers without expensive marketing.
+      </p>
 
-      <a href="../index.html" class="back">← Back to Home</a>
+      <p data-i18n="p4">
+        Our mission is simple: <em>empower communities by making services accessible and fair</em>.
+        Whether you’re a customer or a provider, ServeGo makes it easier to connect, work, and trust.
+      </p>
+
+      <a href="../index.html" class="back" data-i18n="back">← Back to Home</a>
     </div>
   </div>
+
+  <script>
+    const dict = {
+      en: {
+        title: "Why We Built ServeGo",
+        metaDesc: "Why we created ServeGo to make hiring trusted local services simple, safe, and fair.",
+        blog: "Blog",
+        h1: "Why We Built ServeGo",
+        p1: "Finding trusted local services has always been a challenge. Whether it’s a last-minute plumber, a reliable tutor, or a skilled stylist, people often rely on word of mouth or random searches — and the results are inconsistent.",
+        p2: "We built <strong>ServeGo</strong> to make this process seamless, safe, and trustworthy. By connecting users with verified service providers, we help people get help faster while giving providers new opportunities to grow their business.",
+        p3: "With ServeGo, you can book instantly, chat securely, and track updates in real time. For providers, it’s a chance to showcase their skills, build reputation with ratings and reviews, and reach more customers without expensive marketing.",
+        p4: "Our mission is simple: <em>empower communities by making services accessible and fair</em>. Whether you’re a customer or a provider, ServeGo makes it easier to connect, work, and trust.",
+        back: "← Back to Home"
+      },
+      vi: {
+        title: "Vì sao chúng tôi xây dựng ServeGo",
+        metaDesc: "Lý do chúng tôi tạo ra ServeGo để việc thuê dịch vụ địa phương trở nên đơn giản, an toàn và minh bạch.",
+        blog: "Blog",
+        h1: "Vì sao chúng tôi xây dựng ServeGo",
+        p1: "Tìm dịch vụ địa phương đáng tin cậy chưa bao giờ dễ dàng. Dù là gọi thợ nước gấp, tìm gia sư uy tín hay một stylist khéo tay, mọi người thường dựa vào truyền miệng hoặc tìm kiếm ngẫu nhiên — và kết quả thì thất thường.",
+        p2: "Chúng tôi tạo ra <strong>ServeGo</strong> để biến quá trình này trở nên liền mạch, an toàn và đáng tin cậy. Bằng cách kết nối người dùng với các nhà cung cấp đã được xác minh, ServeGo giúp bạn tìm được sự hỗ trợ nhanh hơn, đồng thời mang đến cơ hội phát triển mới cho các nhà cung cấp.",
+        p3: "Với ServeGo, bạn có thể đặt lịch ngay, trò chuyện an toàn và theo dõi cập nhật theo thời gian thực. Đối với nhà cung cấp, đây là cơ hội để thể hiện kỹ năng, xây dựng uy tín qua đánh giá và tiếp cận nhiều khách hàng hơn mà không cần tốn kém cho quảng cáo.",
+        p4: "Sứ mệnh của chúng tôi rất rõ ràng: <em>trao quyền cho cộng đồng bằng cách giúp dịch vụ trở nên dễ tiếp cận và công bằng</em>. Dù bạn là khách hàng hay nhà cung cấp, ServeGo giúp việc kết nối, làm việc và tin tưởng trở nên đơn giản hơn.",
+        back: "← Quay về trang chủ"
+      }
+    };
+
+    const els = document.querySelectorAll("[data-i18n]");
+    const setLang = (lng) => {
+      const t = dict[lng] || dict.en;
+      els.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.title = t.title;
+      document.documentElement.lang = (lng === "vi" ? "vi" : "en");
+      localStorage.setItem("sg_lang", lng);
+    };
+
+    // init: stored preference > browser language
+    const preferred = localStorage.getItem("sg_lang")
+      || (navigator.language || "").toLowerCase().startsWith("vi") ? "vi" : "en";
+    setLang(preferred);
+
+    // buttons
+    document.getElementById("to-en").onclick = () => setLang("en");
+    document.getElementById("to-vi").onclick = () => setLang("vi");
+  </script>
 </body>
 </html>
