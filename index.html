@@ -106,10 +106,8 @@
     @media (prefers-reduced-motion:reduce){
       .badge.callout.shake{animation:none}
     }
-    /* Typing effect under badges */
-    .type-line{margin-top:8px; color:var(--muted); font-size:.95rem; min-height:1.2em}
-    .type-line #typeMsg::after{content:'|'; margin-left:2px; animation:blink 1s step-end infinite}
-    @keyframes blink{50%{opacity:0}}
+    /* Typing effect line (no caret) */
+    .type-line{margin:10px 0 6px; color:var(--muted); font-size:.95rem; min-height:1.2em}
     /* Provider bullets and stat pills */
     .checks{list-style:none; padding:0; margin:12px 0 16px}
     .checks li{display:flex; align-items:center; gap:10px; color:var(--text); opacity:.95; margin:.2rem 0}
@@ -290,11 +288,12 @@
         <h1 class="h1 reveal delay-1" data-i18n="hero_h">Book trusted local services in minutes</h1>
         <p class="sub reveal delay-2" data-i18n="hero_sub">ServeGo is your one-stop app for hiring verified local professionals you can trust. Book instantly, chat securely, and stay updated in real time—all from your phone. With hundreds of categories and a growing network of providers, ServeGo makes it effortless to find help whenever you need it. With simple booking, real-time updates, and built-in messaging, you can hire with confidence and track every step. Whether you need quick help or long-term services, ServeGo makes it seamless and secure.</p>
         <div style="height:14px"></div>
+        <div style="height:10px"></div>
+        <div class="type-line"><span id="typeMsg" data-i18n="type_want">Want to book a service?</span></div>
         <div class="badges reveal delay-3">
           <a class="badge callout" id="appStoreBadge" href="#"><img src="assets/app-store.svg" alt="App Store badge" width="28" height="28" loading="lazy" decoding="async"><span data-i18n="btn_appstore">Get it on the App Store</span><span class="tip" data-i18n="tip_looking">Looking for a service?</span></a>
           <a class="badge" href="#"><img src="assets/google-play.svg" alt="Google Play badge" width="28" height="28" loading="lazy" decoding="async"><span data-i18n="btn_google">Get it on Google Play</span></a>
         </div>
-        <div class="type-line"><span id="typeMsg" data-i18n="type_want">Want to book a service?</span></div>
         <div style="height:14px"></div>
         <div class="caption reveal delay-3">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
       </div>
@@ -514,23 +513,6 @@
           read_post: 'Đọc bài',
           tip_looking: 'Đang tìm dịch vụ?',
           type_want: 'Bạn muốn đặt dịch vụ?'
-  <script>
-    // Typing effect for the line under badges
-    (function(){
-      var el = document.getElementById('typeMsg');
-      if(!el) return;
-      var full = el.textContent;
-      el.textContent = '';
-      var i = 0;
-      function type(){
-        if(i <= full.length){
-          el.textContent = full.slice(0, i++);
-          setTimeout(type, 55);
-        }
-      }
-      setTimeout(type, 800);
-    })();
-  </script>
         }
       };
       const lang = (navigator.language||'').toLowerCase();
@@ -544,6 +526,25 @@
     })();
   </script>
   <script>
+    // Typing effect for the prompt above badges (replays every 30s)
+    (function(){
+      var el = document.getElementById('typeMsg');
+      if(!el) return;
+      var full = el.textContent;
+      function typeOnce(){
+        el.textContent = '';
+        var i = 0;
+        (function step(){
+          if(i <= full.length){
+            el.textContent = full.slice(0, i++);
+            setTimeout(step, 55);
+          }
+        })();
+      }
+      typeOnce();
+      setInterval(typeOnce, 30000);
+    })();
+  </script>
     // Periodic attention animation for the App Store badge
     (function(){
       var b = document.getElementById('appStoreBadge');
