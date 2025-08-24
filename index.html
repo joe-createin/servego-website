@@ -155,7 +155,7 @@
     .band .container{padding-top:52px; padding-bottom:52px}
 
     /* ===== Wavy sea transition between sections ===== */
-    .ocean{position:relative; width:100%; height:120px; background:linear-gradient(180deg,#7db2ff 0%, #0e1330 100%); overflow:hidden}
+    .ocean{position:relative; width:100%; height:120px; background:#7db2ff; overflow:hidden}
     .ocean svg{position:absolute; left:0; top:-1px; width:200%; height:120px}
     .ocean .wave{animation:drift 12s linear infinite; opacity:.35}
     .ocean .wave2{animation:drift2 18s linear infinite; opacity:.55}
@@ -164,7 +164,7 @@
     @media (prefers-reduced-motion:reduce){ .ocean .wave, .ocean .wave2{animation:none} }
 
     /* Light blue legal band to match provider screenshot */
-    .band.sea-bg{ background:linear-gradient(180deg,#7db2ff 0%, #0e1330 140%) }
+    .band.sea-bg{ background:#7db2ff }
 
     /* ======================== */
     /* Brand wordmark + sparkles */
@@ -411,14 +411,7 @@
     </svg>
   </div>
 
-  <!-- Trust & Safety Strip -->
-  <div class="band">
-    <div class="container" style="display:flex;gap:22px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:.95rem;padding:20px 0">
-      <div>✅ No fees for users</div>
-      <div>🔒 Secure messaging</div>
-      <div>⭐ Verified providers</div>
-    </div>
-  </div>
+  
 
   <!-- Legal -->
   <div class="band alt sea-bg">
