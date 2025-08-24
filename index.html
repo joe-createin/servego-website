@@ -79,14 +79,21 @@
     .phone.contain{aspect-ratio:1170/1624; border-radius:28px; border:10px solid #0f1530; overflow:hidden; background:#0e1330}
     .phone.contain > img{object-fit:contain; background:#7db2ff;}
 
-    /* Attention shake for App Store badge */
+    /* Attention jump+shake for App Store badge */
     .badge.callout{position:relative}
-    @keyframes sg-shake {
-      0%,100%{transform:translateX(0) rotate(0)}
-      10%,30%,50%,70%,90%{transform:translateX(-2px) rotate(-0.5deg)}
-      20%,40%,60%,80%{transform:translateX(2px) rotate(0.5deg)}
+    @keyframes sg-jump-shake {
+      0%,100%{transform:translate(0,0) rotate(0)}
+      10%{transform:translate(-2px,-2px) rotate(-1deg)}
+      20%{transform:translate(3px,-6px) rotate(1deg)}
+      30%{transform:translate(-3px,-2px) rotate(-1deg)}
+      40%{transform:translate(4px,-5px) rotate(1deg)}
+      50%{transform:translate(-2px,-8px) rotate(-1deg)}
+      60%{transform:translate(2px,-3px) rotate(1deg)}
+      70%{transform:translate(-1px,-5px) rotate(-1deg)}
+      80%{transform:translate(1px,-2px) rotate(1deg)}
+      90%{transform:translate(-1px,-1px) rotate(0)}
     }
-    .badge.callout.shake{animation:sg-shake .6s ease-in-out 1}
+    .badge.callout.shake{animation:sg-jump-shake .8s ease-in-out 1}
     .badge.callout .tip{
       position:absolute; top:-28px; left:0; white-space:nowrap;
       background:#0e1330; border:1px solid rgba(255,255,255,.18);
@@ -99,6 +106,10 @@
     @media (prefers-reduced-motion:reduce){
       .badge.callout.shake{animation:none}
     }
+    /* Typing effect under badges */
+    .type-line{margin-top:8px; color:var(--muted); font-size:.95rem; min-height:1.2em}
+    .type-line #typeMsg::after{content:'|'; margin-left:2px; animation:blink 1s step-end infinite}
+    @keyframes blink{50%{opacity:0}}
     /* Provider bullets and stat pills */
     .checks{list-style:none; padding:0; margin:12px 0 16px}
     .checks li{display:flex; align-items:center; gap:10px; color:var(--text); opacity:.95; margin:.2rem 0}
@@ -283,6 +294,7 @@
           <a class="badge callout" id="appStoreBadge" href="#"><img src="assets/app-store.svg" alt="App Store badge" width="28" height="28" loading="lazy" decoding="async"><span data-i18n="btn_appstore">Get it on the App Store</span><span class="tip" data-i18n="tip_looking">Looking for a service?</span></a>
           <a class="badge" href="#"><img src="assets/google-play.svg" alt="Google Play badge" width="28" height="28" loading="lazy" decoding="async"><span data-i18n="btn_google">Get it on Google Play</span></a>
         </div>
+        <div class="type-line"><span id="typeMsg" data-i18n="type_want">Want to book a service?</span></div>
         <div style="height:14px"></div>
         <div class="caption reveal delay-3">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
       </div>
@@ -500,7 +512,25 @@
           blog3_t: 'Lộ trình: sắp tới có gì',
           blog3_s: 'Thanh toán, danh mục và tính năng đang được cùng cộng đồng khám phá.',
           read_post: 'Đọc bài',
-          tip_looking: 'Đang tìm dịch vụ?'
+          tip_looking: 'Đang tìm dịch vụ?',
+          type_want: 'Bạn muốn đặt dịch vụ?'
+  <script>
+    // Typing effect for the line under badges
+    (function(){
+      var el = document.getElementById('typeMsg');
+      if(!el) return;
+      var full = el.textContent;
+      el.textContent = '';
+      var i = 0;
+      function type(){
+        if(i <= full.length){
+          el.textContent = full.slice(0, i++);
+          setTimeout(type, 55);
+        }
+      }
+      setTimeout(type, 800);
+    })();
+  </script>
         }
       };
       const lang = (navigator.language||'').toLowerCase();
