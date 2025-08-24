@@ -154,6 +154,18 @@
     }
     .band .container{padding-top:52px; padding-bottom:52px}
 
+    /* ===== Wavy sea transition between sections ===== */
+    .ocean{position:relative; width:100%; height:120px; background:linear-gradient(180deg,#7db2ff 0%, #0e1330 100%); overflow:hidden}
+    .ocean svg{position:absolute; left:0; top:-1px; width:200%; height:120px}
+    .ocean .wave{animation:drift 12s linear infinite; opacity:.35}
+    .ocean .wave2{animation:drift2 18s linear infinite; opacity:.55}
+    @keyframes drift{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes drift2{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
+    @media (prefers-reduced-motion:reduce){ .ocean .wave, .ocean .wave2{animation:none} }
+
+    /* Light blue legal band to match provider screenshot */
+    .band.sea-bg{ background:linear-gradient(180deg,#7db2ff 0%, #0e1330 140%) }
+
     /* ======================== */
     /* Brand wordmark + sparkles */
     /* ======================== */
@@ -389,6 +401,16 @@
     </section>
   </div>
 
+  <!-- Wave transition -->
+  <div class="ocean" aria-hidden="true">
+    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,40 Q 150,0 300,40 T 600,40 T 900,40 T 1200,40 V120 H0 Z" fill="#7db2ff"></path>
+    </svg>
+    <svg class="wave wave2" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,50 Q 150,20 300,50 T 600,50 T 900,50 T 1200,50 V120 H0 Z" fill="#a8d1ff"></path>
+    </svg>
+  </div>
+
   <!-- Trust & Safety Strip -->
   <div class="band">
     <div class="container" style="display:flex;gap:22px;flex-wrap:wrap;justify-content:center;color:var(--muted);font-size:.95rem;padding:20px 0">
@@ -399,10 +421,10 @@
   </div>
 
   <!-- Legal -->
-  <div class="band alt">
+  <div class="band alt sea-bg">
     <section id="legal" class="container section">
       <h2 style="margin:.2rem 0 1rem">Legal</h2>
-      <p><strong>Trademark.</strong> ServeGo™ is a trademark of ServeGo Technologies. All other names and brands are property of their respective owners.</p>
+      <p><strong>Trademark.</strong> ServeGo™ is a trademark of ServeGo Technologies. All other trademarks, logos, and brand names appearing on ServeGo are the property of their respective owners. Use of these names, trademarks, and brands does not imply endorsement.</p>
       <p><strong>Copyright.</strong> © <span id="y"></span> ServeGo. All rights reserved.</p>
 
       <h3 style="margin:1.2rem 0 .4rem">Terms of Use (summary)</h3>
