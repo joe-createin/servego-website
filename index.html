@@ -182,7 +182,7 @@
       background:linear-gradient(180deg,#0e1330 0%, #0b1020 120%);
       border-top:1px solid rgba(255,255,255,.08);
     }
-    .band .container{padding-top:52px; padding-bottom:52px}
+    .band .container{padding-top:52px; padding-bottom:72px}
 
     /* ===== Wavy sea transition between sections ===== */
     .ocean{position:relative; width:100%; height:120px; background:#7db2ff; overflow:hidden}
@@ -194,7 +194,9 @@
     @media (prefers-reduced-motion:reduce){ .ocean .wave, .ocean .wave2{animation:none} }
 
     /* Light blue legal band to match provider screenshot */
-    .band.sea-bg{ background:#7db2ff }
+    .band.sea-bg{
+      background: linear-gradient(180deg, #6ad5ff 0%, #4aa8ff 100%) !important;
+    }
 
     /* ======================== */
     /* Brand wordmark + sparkles */
