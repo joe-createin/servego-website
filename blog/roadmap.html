@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="title">Roadmap: What’s Next</title>
+  <meta name="description" data-i18n="metaDesc"
+        content="Payments, categories, and features we're exploring with the community." />
+  <style>
+    :root { --bg:#0b1020; --card:#121833; --text:#eaf0ff; --muted:#a2aed0; --brand:#4aa8ff; --radius:16px; --shadow:0 8px 28px rgba(0,0,0,.35) }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.7}
+    header{padding:18px 24px;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;gap:14px;align-items:center}
+    .lang{margin-left:auto;position:absolute;right:18px}
+    .lang button{background:#0f1530;border:1px solid rgba(255,255,255,.18);color:var(--text);padding:.35rem .6rem;border-radius:10px;cursor:pointer}
+    .container{max-width:860px;margin:0 auto;padding:48px 20px;opacity:0;transform:translateY(18px);animation:fadeUp .8s ease forwards}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px}
+    h1{font-size:clamp(2rem,3.5vw,2.6rem);margin:0 0 1.2rem;background:linear-gradient(135deg,var(--brand),#6ad5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    h2{margin:1.4rem 0 .6rem}
+    p{color:var(--muted);margin:.9rem 0 1.1rem;font-size:1.05rem}
+    ul{margin:.3rem 0 1.2rem 1.2rem;color:var(--muted)}
+    li{margin:.4rem 0}
+    .callout{border-left:3px solid var(--brand);padding:.8rem 1rem;background:rgba(74,168,255,.08);border-radius:10px}
+    a.back{display:inline-block;margin-top:2rem;color:var(--brand);text-decoration:none;font-weight:500}
+    a.back:hover{text-decoration:underline}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div>ServeGo <span data-i18n="blog">Blog</span></div>
+    <div class="lang" aria-label="Language switcher">
+      <button id="to-en" type="button">EN</button>
+      <button id="to-vi" type="button">VI</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h1 data-i18n="h1">Roadmap: What’s Next</h1>
+      <p class="callout" data-i18n="intro">
+        At ServeGo, launch is just the beginning. We’re building step-by-step with the community —
+        listening to users and providers to shape the future. Here’s a peek at what’s coming.
+      </p>
+
+      <h2 data-i18n="paymentsTitle">1) Payments (secure & local)</h2>
+      <p data-i18n="paymentsBody">
+        We’re integrating trusted providers per region (Stripe/Apple Pay/Google Pay for US; MoMo/ZaloPay for VN).
+        Expect secure in-app checkout, clear receipts, and a wallet where providers can track payouts.
+      </p>
+      <ul data-i18n="paymentsList">
+        <li>In-app pay with cards and local methods</li>
+        <li>Escrow-style flow for safer transactions</li>
+        <li>Provider wallet + payout scheduling</li>
+      </ul>
+
+      <h2 data-i18n="categoriesTitle">2) Category expansion</h2>
+      <p data-i18n="categoriesBody">
+        Beyond our core services, we’re adding more depth: home services, beauty, tutoring, wellness, and professional categories.
+        We’ll group them into clean themes so users discover faster.
+      </p>
+
+      <h2 data-i18n="reviewsTitle">3) Ratings & Reviews 2.0</h2>
+      <p data-i18n="reviewsBody">
+        Reviews will be richer and more helpful: verified-only ratings, dimensions like punctuality/communication,
+        and reputation signals that reward consistency.
+      </p>
+
+      <h2 data-i18n="searchTitle">4) Smarter search & matching</h2>
+      <p data-i18n="searchBody">
+        We’re improving relevance: better handling of typos and local terms, plus matching that considers distance,
+        availability, rating, and response time.
+      </p>
+
+      <h2 data-i18n="notifyTitle">5) Better notifications</h2>
+      <p data-i18n="notifyBody">
+        Push notifications (post-approval), vibration feedback, and helpful reminders like “Your provider is on the way.”
+      </p>
+
+      <h2 data-i18n="toolsTitle">6) Provider tools</h2>
+      <ul data-i18n="toolsList">
+        <li>Advanced scheduling (calendar view, time-off)</li>
+        <li>Earnings insights (daily/weekly/monthly)</li>
+        <li>Multi-service profiles (offer multiple categories)</li>
+      </ul>
+
+      <h2 data-i18n="safetyTitle">7) Community & safety</h2>
+      <p data-i18n="safetyBody">
+        Stronger in-app reporting, periodic re-verification, fraud detection, and category restrictions if needed —
+        to keep the marketplace fair and accountable.
+      </p>
+
+      <h2 data-i18n="wrapTitle">Building with you</h2>
+      <p data-i18n="wrapBody">
+        We’ll roll out updates in stages and share progress publicly. Your feedback shapes our priorities —
+        tell us what you need most, and we’ll build it together.
+      </p>
+
+      <a href="../index.html#blog" class="back" data-i18n="back">← Back to Updates</a>
+    </div>
+  </div>
+
+  <script>
+    const dict = {
+      en: {
+        title: "Roadmap: What’s Next",
+        metaDesc: "Payments, categories, and features we're exploring with the community.",
+        blog: "Blog",
+        h1: "Roadmap: What’s Next",
+        intro: "At ServeGo, launch is just the beginning. We’re building step-by-step with the community — listening to users and providers to shape the future. Here’s a peek at what’s coming.",
+        paymentsTitle: "1) Payments (secure & local)",
+        paymentsBody: "We’re integrating trusted providers per region (Stripe/Apple Pay/Google Pay for US; MoMo/ZaloPay for VN). Expect secure in-app checkout, clear receipts, and a wallet where providers can track payouts.",
+        paymentsList: `<li>In-app pay with cards and local methods</li>
+                       <li>Escrow-style flow for safer transactions</li>
+                       <li>Provider wallet + payout scheduling</li>`,
+        categoriesTitle: "2) Category expansion",
+        categoriesBody: "Beyond our core services, we’re adding more depth: home services, beauty, tutoring, wellness, and professional categories. We’ll group them into clean themes so users discover faster.",
+        reviewsTitle: "3) Ratings & Reviews 2.0",
+        reviewsBody: "Reviews will be richer and more helpful: verified-only ratings, dimensions like punctuality/communication, and reputation signals that reward consistency.",
+        searchTitle: "4) Smarter search & matching",
+        searchBody: "We’re improving relevance: better handling of typos and local terms, plus matching that considers distance, availability, rating, and response time.",
+        notifyTitle: "5) Better notifications",
+        notifyBody: "Push notifications (post-approval), vibration feedback, and helpful reminders like “Your provider is on the way.”",
+        toolsTitle: "6) Provider tools",
+        toolsList: `<li>Advanced scheduling (calendar view, time-off)</li>
+                    <li>Earnings insights (daily/weekly/monthly)</li>
+                    <li>Multi-service profiles (offer multiple categories)</li>`,
+        safetyTitle: "7) Community & safety",
+        safetyBody: "Stronger in-app reporting, periodic re-verification, fraud detection, and category restrictions if needed — to keep the marketplace fair and accountable.",
+        wrapTitle: "Building with you",
+        wrapBody: "We’ll roll out updates in stages and share progress publicly. Your feedback shapes our priorities — tell us what you need most, and we’ll build it together.",
+        back: "← Back to Updates"
+      },
+      vi: {
+        title: "Lộ trình phát triển",
+        metaDesc: "Thanh toán, danh mục và các tính năng chúng tôi xây dựng cùng cộng đồng.",
+        blog: "Blog",
+        h1: "Lộ trình phát triển: Sắp có gì?",
+        intro: "Với ServeGo, việc ra mắt chỉ là bước khởi đầu. Chúng tôi phát triển từng bước cùng cộng đồng — lắng nghe người dùng và nhà cung cấp để định hình tương lai. Dưới đây là những điểm sắp triển khai.",
+        paymentsTitle: "1) Thanh toán (an toàn & địa phương)",
+        paymentsBody: "Tích hợp theo khu vực (Stripe/Apple Pay/Google Pay cho Mỹ; MoMo/ZaloPay cho Việt Nam). Có thanh toán trong ứng dụng, biên lai rõ ràng và ví để nhà cung cấp theo dõi rút tiền.",
+        paymentsList: `<li>Thanh toán trong app bằng thẻ và phương thức nội địa</li>
+                       <li>Dòng tiền kiểu ký quỹ để giao dịch an toàn hơn</li>
+                       <li>Ví nhà cung cấp + lịch rút tiền</li>`,
+        categoriesTitle: "2) Mở rộng danh mục",
+        categoriesBody: "Ngoài các dịch vụ cốt lõi, chúng tôi bổ sung thêm: dịch vụ gia đình, làm đẹp, gia sư, chăm sóc sức khỏe và dịch vụ chuyên nghiệp. Danh mục sẽ được nhóm gọn để người dùng tìm nhanh hơn.",
+        reviewsTitle: "3) Đánh giá & Nhận xét 2.0",
+        reviewsBody: "Đánh giá chi tiết và hữu ích hơn: chỉ người đã đặt mới được đánh giá, các tiêu chí như đúng giờ/giao tiếp, và điểm uy tín cho nhà cung cấp ổn định.",
+        searchTitle: "4) Tìm kiếm & ghép đôi thông minh",
+        searchBody: "Cải thiện độ liên quan: xử lý lỗi chính tả, thuật ngữ địa phương; ghép đôi xét khoảng cách, lịch trống, điểm đánh giá và tốc độ phản hồi.",
+        notifyTitle: "5) Thông báo tốt hơn",
+        notifyBody: "Thông báo đẩy (sau khi được duyệt), phản hồi rung và nhắc việc như “Nhà cung cấp đang trên đường”.",
+        toolsTitle: "6) Công cụ cho nhà cung cấp",
+        toolsList: `<li>Lịch nâng cao (dạng calendar, xin nghỉ)</li>
+                    <li>Thống kê thu nhập (ngày/tuần/tháng)</li>
+                    <li>Hồ sơ đa dịch vụ (cung cấp nhiều hạng mục)</li>`,
+        safetyTitle: "7) Cộng đồng & an toàn",
+        safetyBody: "Báo cáo trong ứng dụng mạnh hơn, xác minh định kỳ, phát hiện gian lận và hạn chế danh mục khi cần — để marketplace công bằng và minh bạch.",
+        wrapTitle: "Xây dựng cùng bạn",
+        wrapBody: "Chúng tôi sẽ phát hành theo giai đoạn và công khai tiến độ. Góp ý của bạn quyết định ưu tiên — hãy nói điều bạn cần, chúng ta sẽ cùng xây dựng.",
+        back: "← Quay lại cập nhật"
+      }
+    };
+
+    const els = document.querySelectorAll("[data-i18n]");
+    function setLang(lng){
+      const t = dict[lng] || dict.en;
+      els.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.title = t.title;
+      document.documentElement.lang = (lng === "vi" ? "vi" : "en");
+      localStorage.setItem("sg_lang", lng);
+    }
+
+    // prefer stored choice; otherwise auto-detect
+    const stored = localStorage.getItem("sg_lang");
+    const auto = ((navigator.language || "").toLowerCase().startsWith("vi")) ? "vi" : "en";
+    setLang(stored ? stored : auto);
+
+    // buttons
+    document.getElementById("to-en").onclick = () => setLang("en");
+    document.getElementById("to-vi").onclick = () => setLang("vi");
+  </script>
+</body>
+</html>
