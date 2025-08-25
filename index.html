@@ -319,9 +319,9 @@
   <!-- Features -->
   <section id="features" class="container section">
     <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-      <div class="feature card reveal"><img src="assets/bolt.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Fast booking</h3><p>Request a service, pick a time, and get matched—no phone calls needed.</p></div>
-      <div class="feature card reveal delay-1"><img src="assets/shield.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Verified providers</h3><p>Profiles, ratings, and reviews help you choose with confidence.</p></div>
-      <div class="feature card reveal delay-2"><img src="assets/chat.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3>Built-in messaging</h3><p>Coordinate details securely in the app. Your info stays private.</p></div>
+      <div class="feature card reveal"><img src="assets/bolt.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3 data-i18n="feature1_t">Fast booking</h3><p data-i18n="feature1_s">Request a service, pick a time, and get matched—no phone calls needed.</p></div>
+      <div class="feature card reveal delay-1"><img src="assets/shield.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3 data-i18n="feature2_t">Verified providers</h3><p data-i18n="feature2_s">Profiles, ratings, and reviews help you choose with confidence.</p></div>
+      <div class="feature card reveal delay-2"><img src="assets/chat.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><h3 data-i18n="feature3_t">Built-in messaging</h3><p data-i18n="feature3_s">Coordinate details securely in the app. Your info stays private.</p></div>
     </div>
   </section>
 
@@ -482,7 +482,7 @@
   <!-- Footer -->
   <footer class="container footer reveal">
     <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div>&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
+      <div data-i18n-html="footer_c_html">&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
       <div class="links">
         <a href="https://privacy.servego.app/">Privacy</a>
         <a href="https://privacy.servego.app/delete-account">Delete account</a>
@@ -565,6 +565,13 @@
           legal_priv_4_html: 'Có câu hỏi? Liên hệ <a href="mailto:support@servego.app" style="color:#ffffff; text-decoration:underline">support@servego.app</a>.',
           provider_cta_html: 'Nhà cung cấp? <a href="#provider">Tham gia ServeGo Provider</a> để nhận việc gần bạn.',
           signup_caption: '“Đăng ký nhanh bằng Google hoặc Email.”',
+          feature1_t: 'Đặt nhanh',
+          feature1_s: 'Yêu cầu dịch vụ, chọn thời gian và được ghép nhanh — không cần gọi điện.',
+          feature2_t: 'Nhà cung cấp đã xác minh',
+          feature2_s: 'Hồ sơ, đánh giá và nhận xét giúp bạn chọn với sự tự tin.',
+          feature3_t: 'Nhắn tin tích hợp',
+          feature3_s: 'Trao đổi chi tiết an toàn trong ứng dụng. Thông tin của bạn luôn riêng tư.',
+          footer_c_html: '© <span id="y"></span> ServeGo. Bảo lưu mọi quyền.',
         }
       };
       // Respect saved preference first, then browser language
