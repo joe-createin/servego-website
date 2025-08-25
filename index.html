@@ -187,8 +187,19 @@
     .billboard .kicker{display:inline-flex; align-items:center; gap:8px; padding:.35rem .7rem; border-radius:999px; font-weight:600; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); color:var(--muted)}
     .billboard .display{font-size:clamp(2.2rem, 6vw, 4rem); line-height:1.05; margin:.7rem 0 .6rem; letter-spacing:-.01em}
     .billboard .lead{color:var(--muted); max-width:72ch; margin:0 auto 1.1rem}
-    .billboard .bill-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-    .billboard .bill-cta .btn{min-width:180px}
+    .billboard .bill-cta{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .billboard .bill-cta .btn{
+      min-width:220px;
+      padding:1rem 1.2rem;
+      justify-content:center;
+      text-align:center;
+    }
 
     /* Light theme variant for billboard */
     [data-theme="light"] .billboard{background:linear-gradient(180deg, #eef7ff 0%, #f6fbff 100%); border-bottom:1px solid rgba(0,0,0,.06)}
@@ -434,8 +445,8 @@
   <section class="billboard" aria-labelledby="billboard-title">
     <div class="wrap">
       <span class="kicker">Official • ServeGo</span>
-      <h1 id="billboard-title" class="display">Book trusted local services — fast</h1>
-      <p class="lead">Hire verified providers in minutes. Chat securely, track status in real time, and manage every job in one app.</p>
+      <h1 id="billboard-title" class="display">Book trusted local services — instantly</h1>
+      <p class="lead">Get local services in minutes. Browse different service options with reviews, chat securely, and track status in real time — all in one app.</p>
       <div class="bill-cta">
         <a class="btn primary" href="#contact">Get ServeGo</a>
         <a class="btn ghost" href="#provider">Become a Provider</a>
