@@ -6,6 +6,14 @@
   <title data-i18n="title">Why We Built ServeGo</title>
   <meta name="description" data-i18n="metaDesc"
         content="Why we created ServeGo to make hiring trusted local services simple, safe, and fair." />
+  <link rel="icon" href="../assets/servego_logo.png">
+  <link rel="canonical" href="https://servego.app/blog/why-we-built.html">
+  <meta property="og:title" content="Why We Built ServeGo" />
+  <meta property="og:description" content="Why we created ServeGo to make hiring trusted local services simple, safe, and fair." />
+  <meta property="og:image" content="https://servego.app/assets/servego_logo.png" />
+  <meta property="og:url" content="https://servego.app/blog/why-we-built.html" />
+  <meta property="og:site_name" content="ServeGo" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     :root { --bg:#0b1020; --card:#121833; --text:#eaf0ff; --muted:#a2aed0; --brand:#4aa8ff; --radius:16px; --shadow:0 8px 28px rgba(0,0,0,.35) }
     *{box-sizing:border-box}
@@ -98,10 +106,11 @@
       document.title = t.title;
       document.documentElement.lang = (lng === "vi" ? "vi" : "en");
       localStorage.setItem("sg_lang", lng);
+      localStorage.setItem("lang", lng);
     };
 
     // init: stored preference > browser language
-    const preferred = localStorage.getItem("sg_lang")
+    const preferred = localStorage.getItem("sg_lang") || localStorage.getItem("lang")
       || (navigator.language || "").toLowerCase().startsWith("vi") ? "vi" : "en";
     setLang(preferred);
 
