@@ -180,7 +180,19 @@
     .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#061227; border:0; font-weight:700}
     .btn.ghost{background:transparent;border-color:#2d3560}
     .grid{display:grid;gap:22px}
-    .hero{padding:52px 0}
+    .hero{padding:36px 0}
+    /* ===== Top billboard banner ===== */
+    .billboard{width:100%; background:linear-gradient(180deg, rgba(106,213,255,.12) 0%, rgba(74,168,255,.08) 100%); border-bottom:1px solid rgba(255,255,255,.08)}
+    .billboard .wrap{max-width:1080px; margin:0 auto; padding:54px 24px; text-align:center}
+    .billboard .kicker{display:inline-flex; align-items:center; gap:8px; padding:.35rem .7rem; border-radius:999px; font-weight:600; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); color:var(--muted)}
+    .billboard .display{font-size:clamp(2.2rem, 6vw, 4rem); line-height:1.05; margin:.7rem 0 .6rem; letter-spacing:-.01em}
+    .billboard .lead{color:var(--muted); max-width:72ch; margin:0 auto 1.1rem}
+    .billboard .bill-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .billboard .bill-cta .btn{min-width:180px}
+
+    /* Light theme variant for billboard */
+    [data-theme="light"] .billboard{background:linear-gradient(180deg, #eef7ff 0%, #f6fbff 100%); border-bottom:1px solid rgba(0,0,0,.06)}
+    [data-theme="light"] .billboard .kicker{background:#f2f6ff; border-color:rgba(0,0,0,.08); color:#4b556b}
     .hero-card{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:center}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
     .pill{display:inline-flex;gap:8px;align-items:center;padding:.35rem .7rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--muted);font-size:.85rem}
@@ -417,6 +429,19 @@
       <button id="langToggle" class="btn ghost" style="padding:.4rem .7rem;font-size:.9rem">EN / VI</button>
     </nav>
   </header>
+
+  <!-- Top billboard banner -->
+  <section class="billboard" aria-labelledby="billboard-title">
+    <div class="wrap">
+      <span class="kicker">Official • ServeGo</span>
+      <h1 id="billboard-title" class="display">Book trusted local services — fast</h1>
+      <p class="lead">Hire verified providers in minutes. Chat securely, track status in real time, and manage every job in one app.</p>
+      <div class="bill-cta">
+        <a class="btn primary" href="#contact">Get ServeGo</a>
+        <a class="btn ghost" href="#provider">Become a Provider</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Hero -->
   <section class="container hero">
