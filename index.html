@@ -460,12 +460,12 @@
   <!-- Top billboard banner -->
   <section class="billboard" aria-labelledby="billboard-title">
     <div class="wrap">
-      <span class="kicker">Official • ServeGo</span>
-      <h1 id="billboard-title" class="display">Book trusted local services — instantly</h1>
-      <p class="lead">Get local services in minutes. Browse different service options with reviews, chat securely, and track status in real time — all in one app.</p>
+      <span class="kicker" data-i18n="bb_kicker">Official • ServeGo</span>
+      <h1 id="billboard-title" class="display" data-i18n="bb_title">Book trusted local services — instantly</h1>
+      <p class="lead" data-i18n="bb_lead">Get local services in minutes. Browse different service options with reviews, chat securely, and track status in real time — all in one app.</p>
       <div class="bill-cta">
-        <a class="btn primary" href="#contact">Get ServeGo</a>
-        <a class="btn ghost" href="#provider">Become a Provider</a>
+        <a class="btn primary" href="#contact" data-i18n="bb_get">Get ServeGo</a>
+        <a class="btn ghost" href="#provider" data-i18n="bb_provider">Become a Provider</a>
       </div>
     </div>
   </section>
@@ -596,7 +596,7 @@
     </details>
     <details class="reveal delay-2">
       <summary data-i18n="faq_q3">Which locations do you support?</summary>
-      <p class="lead" data-i18n-html="faq_a3_html">We're launching city by city. If we're not in your area yet, follow <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener">@servegoofficial</a> for updates.</p>
+      <p class="lead" data-i18n-html="faq_a3_html">We currently support Australia, Thailand, Vietnam, Singapore, and South Africa. ServeGo is not available in India — beware of impersonators.</p>
     </details>
   </section>
 
@@ -779,13 +779,18 @@
           about_title: 'Về ServeGo',
           about_body: 'Chúng tôi xây dựng ServeGo để việc thuê dịch vụ địa phương trở nên dễ dàng và đáng tin như gọi xe. Sứ mệnh của chúng tôi là kết nối mọi người với các chuyên gia đã xác minh, tạo cơ hội công bằng cho nhà cung cấp và giữ mọi tương tác minh bạch, an toàn.',
 
+          bb_kicker: 'Chính thức • ServeGo',
+          bb_title: 'Đặt dịch vụ địa phương đáng tin — tức thì',
+          bb_lead: 'Nhận dịch vụ gần bạn trong vài phút. Duyệt nhiều lựa chọn kèm đánh giá, nhắn tin an toàn và theo dõi trạng thái theo thời gian thực — tất cả trong một ứng dụng.',
+          bb_get: 'Tải ServeGo',
+          bb_provider: 'Trở thành nhà cung cấp',
           faq_title: 'Câu hỏi thường gặp',
           faq_q1: 'ServeGo có miễn phí cho người dùng không?',
           faq_a1: 'Có. Duyệt, đặt lịch và nhắn tin đều miễn phí cho người dùng. Một số dịch vụ có thể có phí do nhà cung cấp đặt.',
           faq_q2: 'Làm thế nào để trở thành nhà cung cấp?',
           faq_a2: 'Tải ứng dụng ServeGo Provider, tạo hồ sơ, chọn danh mục và gửi xác minh cơ bản. Bạn sẽ bắt đầu nhận việc gần bạn sau khi được duyệt.',
           faq_q3: 'Khu vực nào được hỗ trợ?',
-          faq_a3_html: 'Chúng tôi triển khai theo từng thành phố. Nếu hiện chưa có ở khu vực của bạn, hãy theo dõi <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener">@servegoofficial</a> để nhận cập nhật.',
+          faq_a3_html: 'Hiện chúng tôi hỗ trợ: Australia, Thailand, Vietnam, Singapore và South Africa. ServeGo chưa khả dụng tại Ấn Độ — hãy cảnh giác với các trang giả mạo.',
 
           contact_title: 'Liên hệ',
           contact_lead: 'Bạn có câu hỏi hoặc ý tưởng hợp tác? Gửi tin nhắn cho chúng tôi — thường phản hồi trong 1–2 ngày làm việc.',
@@ -818,10 +823,9 @@
           footer_c_html: '© <span id="y"></span> ServeGo. Bảo lưu mọi quyền.',
         }
       };
-      // Respect saved preference first, then browser language
-      const stored = (localStorage.getItem('lang')||'').toLowerCase();
-      const browser = (navigator.language||'').toLowerCase();
-      const lang = stored || browser;
+      // Respect saved preference only; default to English
+      const stored = (localStorage.getItem('lang')||'en').toLowerCase();
+      const lang = stored;
       // Reflect on html lang attribute for accessibility/SEO
       document.documentElement.lang = lang.startsWith('vi') ? 'vi' : 'en';
       if(lang.startsWith('vi')){
@@ -939,14 +943,8 @@
       }
 
       // ===== LANGUAGE =====
-      const savedLang = (localStorage.getItem('lang')||'').toLowerCase();
-      if(savedLang){
-        docEl.lang = savedLang;
-      } else if((navigator.language||'').toLowerCase().startsWith('vi')){
-        docEl.lang = 'vi';
-      } else {
-        docEl.lang = 'en';
-      }
+      const savedLang = (localStorage.getItem('lang')||'en').toLowerCase();
+      docEl.lang = savedLang.startsWith('vi') ? 'vi' : 'en';
       var langBtn = document.getElementById('langToggle');
       if(langBtn){
         langBtn.addEventListener('click', function(){
