@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Blog posts -->
+  <!-- Blog / Updates -->
   <url>
     <loc>https://servego.app/blog/why-we-built.html</loc>
     <lastmod>2025-08-25</lastmod>
@@ -25,7 +25,14 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Legal page -->
+  <!-- Contact (section is fine to list the page root) -->
+  <url>
+    <loc>https://servego.app/#contact</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal -->
   <url>
     <loc>https://servego.app/#legal</loc>
     <lastmod>2025-08-25</lastmod>
