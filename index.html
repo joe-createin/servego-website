@@ -308,6 +308,11 @@
       padding:.6rem .8rem; border:1px solid #2d3560; background:#0f1530;
       color:var(--text); border-radius:12px;
     }
+    [data-theme="light"] .nav-toggle{
+      background:#f2f6ff; /* soft light background */
+      border-color:#d9dcec; /* light border */
+      color:#0b1020; /* dark text for contrast */
+    }
     .nav-toggle svg{width:22px;height:22px}
     @media (max-width:900px){
       header.container{flex-wrap:wrap}
@@ -679,59 +684,59 @@
   <footer class="container footer reveal">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="f_services">Services</h4>
         <ul>
-          <li><a href="/services/barber">Barbers</a></li>
-          <li><a href="/services/tutor">Tutors</a></li>
-          <li><a href="/services/mechanic">Mechanics</a></li>
-          <li><a href="/services/lawyer">Lawyers</a></li>
-          <li><a href="/services/motel">Motels</a></li>
+          <li><a href="/services/taxi" data-i18n="f_services_taxi">Taxi</a></li>
+          <li><a href="/services/tutor" data-i18n="f_services_tutors">Tutors</a></li>
+          <li><a href="/services/mechanic" data-i18n="f_services_mechanics">Mechanics</a></li>
+          <li><a href="/services/lawyer" data-i18n="f_services_lawyers">Lawyers</a></li>
+          <li><a href="/services/repairer" data-i18n="f_services_repairer">Repairer</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Providers</h4>
+        <h4 data-i18n="f_providers">Providers</h4>
         <ul>
-          <li><a href="#provider">Become a Provider</a></li>
-          <li><a href="/blog/provider-verification.html">Verification</a></li>
-          <li><a href="#provider">Provider App</a></li>
-          <li><a href="/blog/roadmap.html">Earnings &amp; roadmap</a></li>
+          <li><a href="#provider" data-i18n="f_providers_become">Become a Provider</a></li>
+          <li><a href="/blog/provider-verification.html" data-i18n="f_providers_verification">Verification</a></li>
+          <li><a href="#provider" data-i18n="f_providers_app">Provider App</a></li>
+          <li><a href="/blog/roadmap.html" data-i18n="f_providers_earnings">Earnings &amp; roadmap</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="f_company">Company</h4>
         <ul>
-          <li><a href="#about">About ServeGo</a></li>
-          <li><a href="/blog/why-we-built.html">Why we built ServeGo</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="/blog/roadmap.html">Roadmap</a></li>
+          <li><a href="#about" data-i18n="f_company_about">About ServeGo</a></li>
+          <li><a href="/blog/why-we-built.html" data-i18n="f_company_why">Why we built ServeGo</a></li>
+          <li><a href="#blog" data-i18n="f_company_blog">Blog</a></li>
+          <li><a href="/blog/roadmap.html" data-i18n="f_company_roadmap">Roadmap</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Support</h4>
+        <h4 data-i18n="f_support">Support</h4>
         <ul>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="mailto:support@servego.app">Customer Support</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq" data-i18n="f_support_faq">FAQ</a></li>
+          <li><a href="mailto:support@servego.app" data-i18n="f_support_cs">Customer Support</a></li>
+          <li><a href="#how" data-i18n="f_support_how">How it works</a></li>
+          <li><a href="#contact" data-i18n="f_support_contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4 data-i18n="f_legal">Legal</h4>
         <ul>
-          <li><a href="https://privacy.servego.app/">Privacy Policy</a></li>
-          <li><a href="https://privacy.servego.app/delete-account">Delete account</a></li>
-          <li><a href="#legal">Terms &amp; summaries</a></li>
-          <li><a href="#legal">Copyright &amp; Trademark</a></li>
+          <li><a href="https://privacy.servego.app/" data-i18n="f_legal_privacy">Privacy Policy</a></li>
+          <li><a href="https://privacy.servego.app/delete-account" data-i18n="f_legal_delete">Delete account</a></li>
+          <li><a href="#legal" data-i18n="f_legal_terms">Terms &amp; summaries</a></li>
+          <li><a href="#legal" data-i18n="f_legal_copyright">Copyright &amp; Trademark</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Locations</h4>
+        <h4 data-i18n="f_locations">Locations</h4>
         <ul>
-          <li><a href="/locations/ho-chi-minh">Australia</a></li>
-          <li><a href="/locations/hanoi">Thailand</a></li>
-          <li><a href="/locations/da-nang">Vietnam</a></li>
-          <li><a href="/locations/singapore">Singapore</a></li>
-          <li><a href="/locations/manila">South Africa</a></li>
+          <li><a href="/locations/ho-chi-minh" data-i18n="f_loc_au">Australia</a></li>
+          <li><a href="/locations/hanoi" data-i18n="f_loc_th">Thailand</a></li>
+          <li><a href="/locations/da-nang" data-i18n="f_loc_vn">Vietnam</a></li>
+          <li><a href="/locations/singapore" data-i18n="f_loc_sg">Singapore</a></li>
+          <li><a href="/locations/manila" data-i18n="f_loc_za">South Africa</a></li>
         </ul>
       </div>
     </div>
@@ -1027,3 +1032,42 @@
   })();
 </script>
 </html>
+          // Footer headings
+          f_services: 'Dịch vụ',
+          f_providers: 'Nhà cung cấp',
+          f_company: 'Công ty',
+          f_support: 'Hỗ trợ',
+          f_legal: 'Pháp lý',
+          f_locations: 'Khu vực',
+          // Services
+          f_services_taxi: 'Taxi',
+          f_services_tutors: 'Gia sư',
+          f_services_mechanics: 'Thợ máy',
+          f_services_lawyers: 'Luật sư',
+          f_services_repairer: 'Thợ sửa chữa',
+          // Providers
+          f_providers_become: 'Trở thành nhà cung cấp',
+          f_providers_verification: 'Xác minh',
+          f_providers_app: 'Ứng dụng Provider',
+          f_providers_earnings: 'Thu nhập & lộ trình',
+          // Company
+          f_company_about: 'Về ServeGo',
+          f_company_why: 'Vì sao chúng tôi xây dựng ServeGo',
+          f_company_blog: 'Blog',
+          f_company_roadmap: 'Lộ trình',
+          // Support
+          f_support_faq: 'Câu hỏi thường gặp',
+          f_support_cs: 'Hỗ trợ khách hàng',
+          f_support_how: 'Cách hoạt động',
+          f_support_contact: 'Liên hệ',
+          // Legal
+          f_legal_privacy: 'Chính sách quyền riêng tư',
+          f_legal_delete: 'Xoá tài khoản',
+          f_legal_terms: 'Điều khoản & tóm tắt',
+          f_legal_copyright: 'Bản quyền & Nhãn hiệu',
+          // Locations
+          f_loc_au: 'Australia',
+          f_loc_th: 'Thailand',
+          f_loc_vn: 'Việt Nam',
+          f_loc_sg: 'Singapore',
+          f_loc_za: 'Nam Phi',
