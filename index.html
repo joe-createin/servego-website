@@ -349,6 +349,12 @@
     .socials{display:flex; gap:14px; align-items:center}
     .socials a{display:inline-flex; align-items:center; gap:8px; padding:.45rem .7rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--text); background:#0e1330}
 
+    [data-theme="light"] .socials a{
+      background: linear-gradient(180deg, #6ad5ff 0%, #4aa8ff 100%);
+      border-color: transparent;
+      color: #ffffff;
+    }
+
     @media (max-width:900px){
       .blog-grid{grid-template-columns:1fr}
     }
@@ -562,7 +568,7 @@
 
   <!-- Blog / Updates -->
   <section id="blog" class="container section">
-    <h2 class="reveal" style="margin:.2rem 0 1rem">Updates</h2>
+    <h2 class="reveal" style="margin:.2rem 0 1rem" data-i18n="updates_title">Updates</h2>
     <div class="blog-grid">
       <article class="card blog-card reveal">
         <h3 data-i18n="blog1_t">Why we built ServeGo</h3>
@@ -769,6 +775,7 @@
           blog3_t: 'Lộ trình: sắp tới có gì',
           blog3_s: 'Thanh toán, danh mục và tính năng đang được cùng cộng đồng khám phá.',
           read_post: 'Đọc bài',
+          updates_title: 'Cập nhật',
           tip_looking: 'Đang tìm dịch vụ?',
           type_want: 'Bạn muốn đặt dịch vụ?',
           how_title: 'Cách hoạt động',
