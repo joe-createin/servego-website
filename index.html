@@ -204,6 +204,25 @@
     /* Light theme variant for billboard */
     [data-theme="light"] .billboard{background:linear-gradient(180deg, #eef7ff 0%, #f6fbff 100%); border-bottom:1px solid rgba(0,0,0,.06)}
     [data-theme="light"] .billboard .kicker{background:#f2f6ff; border-color:rgba(0,0,0,.08); color:#4b556b}
+
+    /* ==== About hero (full width banner) ==== */
+    .about-hero{
+      width:100%;
+      background:linear-gradient(180deg,#4aa8ff 0%, #6ad5ff 100%);
+      border-top:1px solid rgba(255,255,255,.12);
+      border-bottom:1px solid rgba(0,0,0,.08);
+      text-align:center;
+    }
+    .about-hero .wrap{max-width:1080px;margin:0 auto;padding:72px 24px}
+    .about-hero .kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:.35rem .7rem;border-radius:999px;font-weight:600;
+      background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#eef6ff
+    }
+    .about-hero .display{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:.7rem 0 .6rem;color:#fff}
+    .about-hero .lead{color:#f0f6ff;max-width:72ch;margin:0 auto 1.1rem}
+    .about-hero .btn.primary{box-shadow:0 10px 26px rgba(0,0,0,.25)}
+    [data-theme="light"] .about-hero{border-bottom-color:rgba(0,0,0,.06)}
     .hero-card{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:center}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
     .pill{display:inline-flex;gap:8px;align-items:center;padding:.35rem .7rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--muted);font-size:.85rem}
@@ -539,11 +558,46 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="container section">
-    <div class="card reveal" style="padding:28px">
-      <h2 style="margin:.2rem 0 .6rem" data-i18n="about_title">About ServeGo</h2>
-      <p class="lead" data-i18n="about_body">We started ServeGo to make hiring local help as easy and trustworthy as ordering a ride. Our mission is to connect people with verified professionals, create fair opportunities for providers, and keep every interaction transparent and secure.</p>
+  <!-- About — full-width banner + objectives -->
+  <section id="about" class="about-hero">
+    <div class="wrap">
+      <span class="kicker" data-i18n="about_kicker">About us</span>
+      <h2 class="display" data-i18n="about_banner_title">ServeGo is the first instant local service super-app.</h2>
+      <p class="lead" data-i18n="about_banner_sub">
+        We’re redefining how people hire trusted professionals. From Taxi's, Haircuts to repairs, tutoring to legal help — ServeGo connects you instantly with verified providers. Book, chat, and track everything in real time, all in one app.
+      </p>
+      <a class="btn primary" href="#about-goals" data-i18n="about_banner_cta">Our mission</a>
+    </div>
+  </section>
+  <section id="about-goals" class="container section">
+    <div class="card reveal" style="padding:26px">
+      <h3 style="margin:.2rem 0 1rem" data-i18n="goals_title">Our main objectives</h3>
+      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div class="feature">
+          <h4 data-i18n="goal_1_t">Instant access</h4>
+          <p class="lead" data-i18n="goal_1_s">Match with verified providers in minutes across key categories.</p>
+        </div>
+        <div class="feature">
+          <h4 data-i18n="goal_2_t">Trusted marketplace</h4>
+          <p class="lead" data-i18n="goal_2_s">Profiles, reviews, and verification to keep experiences safe.</p>
+        </div>
+        <div class="feature">
+          <h4 data-i18n="goal_3_t">Great communication</h4>
+          <p class="lead" data-i18n="goal_3_s">Secure in‑app chat and real‑time status from request to completion.</p>
+        </div>
+        <div class="feature">
+          <h4 data-i18n="goal_4_t">Fair opportunities</h4>
+          <p class="lead" data-i18n="goal_4_s">Help local providers grow with ratings, schedules, and earnings tools.</p>
+        </div>
+        <div class="feature">
+          <h4 data-i18n="goal_5_t">Privacy first</h4>
+          <p class="lead" data-i18n="goal_5_s">Minimal data, transparent controls, and fast deletion on request.</p>
+        </div>
+        <div class="feature">
+          <h4 data-i18n="goal_6_t">Global, local-first</h4>
+          <p class="lead" data-i18n="goal_6_s">Expand city by city with local languages and categories.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -833,6 +887,23 @@
           feature3_t: 'Nhắn tin tích hợp',
           feature3_s: 'Trao đổi chi tiết an toàn trong ứng dụng. Thông tin của bạn luôn riêng tư.',
           footer_c_html: '© <span id="y"></span> ServeGo. Bảo lưu mọi quyền.',
+          about_kicker: 'Về chúng tôi',
+          about_banner_title: 'ServeGo là siêu ứng dụng dịch vụ địa phương tức thì đầu tiên.',
+          about_banner_sub: 'Chúng tôi tái định nghĩa cách thuê chuyên gia đáng tin. Từ Taxi, cắt tóc đến sửa chữa, gia sư và hỗ trợ pháp lý — ServeGo kết nối bạn ngay với nhà cung cấp đã xác minh. Đặt lịch, trò chuyện và theo dõi theo thời gian thực — tất cả trong một ứng dụng.',
+          about_banner_cta: 'Sứ mệnh của chúng tôi',
+          goals_title: 'Mục tiêu chính của chúng tôi',
+          goal_1_t: 'Truy cập tức thì',
+          goal_1_s: 'Ghép nối với nhà cung cấp đã xác minh trong vài phút ở các danh mục quan trọng.',
+          goal_2_t: 'Chợ dịch vụ đáng tin',
+          goal_2_s: 'Hồ sơ, đánh giá và xác minh để trải nghiệm an toàn.',
+          goal_3_t: 'Giao tiếp hiệu quả',
+          goal_3_s: 'Trò chuyện an toàn trong ứng dụng và trạng thái theo thời gian thực từ lúc yêu cầu đến khi hoàn tất.',
+          goal_4_t: 'Cơ hội công bằng',
+          goal_4_s: 'Giúp nhà cung cấp địa phương phát triển với đánh giá, lịch làm và công cụ thu nhập.',
+          goal_5_t: 'Ưu tiên quyền riêng tư',
+          goal_5_s: 'Thu thập tối thiểu, minh bạch và xoá dữ liệu nhanh khi yêu cầu.',
+          goal_6_t: 'Toàn cầu, ưu tiên địa phương',
+          goal_6_s: 'Mở rộng theo từng thành phố với ngôn ngữ và danh mục phù hợp địa phương.',
         }
       };
       // Respect saved preference only; default to English
