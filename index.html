@@ -84,6 +84,20 @@
     .phone.contain{aspect-ratio:1170/1624; border-radius:28px; border:10px solid #0f1530; overflow:hidden; background:#0e1330}
     .phone.contain > img{object-fit:contain; background:#7db2ff;}
 
+    /* Center the provider phone inside its grid cell on all screens */
+    .cta > div:last-child{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Ensure the phone card itself is centered and not overly wide */
+    .provider-shot{
+      margin-inline: auto;
+      max-width: 420px;
+      width: 100%;
+    }
+
     /* Attention jump+shake for App Store badge */
     .badge.callout{position:relative}
     @keyframes sg-jump-shake {
@@ -157,6 +171,11 @@
     @media (max-width:900px){
       .hero-card,.cta{grid-template-columns:1fr}
       .hero{padding:28px 0}
+      /* Prevent the provider phone from overlapping buttons on mobile */
+      .provider-shot{
+        transform: none !important;
+        margin-top: 10px;
+      }
     }
 
     /* ==== entry animations (no layout change) ==== */
