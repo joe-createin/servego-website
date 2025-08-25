@@ -280,6 +280,22 @@
     .footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.95rem}
     .links{display:flex;gap:16px;flex-wrap:wrap}
 
+    /* === Footer columns (Bolt-style) === */
+    .footer-grid{display:grid; gap:22px; grid-template-columns: repeat(5, minmax(0,1fr));}
+    .footer-col h4{margin:.2rem 0 .6rem; font-size:1rem; color:var(--text)}
+    .footer-col ul{list-style:none; padding:0; margin:0}
+    .footer-col li{margin:.4rem 0}
+    .footer-col a{color:var(--muted)}
+    .footer-col a:hover{color:var(--brand)}
+    .footer-meta{display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08)}
+    [data-theme="light"] .footer-meta{border-top-color:rgba(0,0,0,.08)}
+    @media (max-width:900px){
+      .footer-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+    }
+    @media (max-width:520px){
+      .footer-grid{grid-template-columns: 1fr}
+    }
+
     /* ===== Scroll Parallax (subtle) ===== */
     .parallax{will-change:transform; transition:transform .12s linear}
     @media (prefers-reduced-motion: reduce){
@@ -655,14 +671,58 @@
 
   <!-- Footer -->
   <footer class="container footer reveal">
-    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div data-i18n-html="footer_c_html">&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
-      <div class="links">
-        <a href="https://privacy.servego.app/">Privacy</a>
-        <a href="https://privacy.servego.app/delete-account">Delete account</a>
-        <a href="mailto:support@servego.app">support@servego.app</a>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/barber">Barbers</a></li>
+          <li><a href="/services/tutor">Tutors</a></li>
+          <li><a href="/services/mechanic">Mechanics</a></li>
+          <li><a href="/services/lawyer">Lawyers</a></li>
+          <li><a href="/services/motel">Motels</a></li>
+        </ul>
       </div>
-      <div class="socials" style="margin-top:8px">
+      <div class="footer-col">
+        <h4>Providers</h4>
+        <ul>
+          <li><a href="#provider">Become a Provider</a></li>
+          <li><a href="/blog/provider-verification.html">Verification</a></li>
+          <li><a href="#provider">Provider App</a></li>
+          <li><a href="/blog/roadmap.html">Earnings &amp; roadmap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About ServeGo</a></li>
+          <li><a href="/blog/why-we-built.html">Why we built ServeGo</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="/blog/roadmap.html">Roadmap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:support@servego.app">Customer Support</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://privacy.servego.app/">Privacy Policy</a></li>
+          <li><a href="https://privacy.servego.app/delete-account">Delete account</a></li>
+          <li><a href="#legal">Terms &amp; summaries</a></li>
+          <li><a href="#legal">Copyright &amp; Trademark</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <div data-i18n-html="footer_c_html">&copy; <span id="y"></span> ServeGo. All rights reserved.</div>
+      <div class="socials">
         <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener" aria-label="Instagram">📸 Instagram</a>
         <a href="https://www.tiktok.com/@servegoofficial" target="_blank" rel="noopener" aria-label="TikTok">🎵 TikTok</a>
         <a href="https://twitter.com/servegoofficial" target="_blank" rel="noopener" aria-label="X">🐦 X</a>
