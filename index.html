@@ -130,6 +130,12 @@
     .footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.95rem}
     .links{display:flex;gap:16px;flex-wrap:wrap}
 
+    /* ===== Scroll Parallax (subtle) ===== */
+    .parallax{will-change:transform; transition:transform .12s linear}
+    @media (prefers-reduced-motion: reduce){
+      .parallax{transition:none; transform:none !important}
+    }
+
     /* Mobile nav */
     .nav-toggle{
       display:none; align-items:center; justify-content:center; gap:8px;
@@ -279,7 +285,7 @@
     <div class="hero-card card reveal show">
       <div style="padding:28px">
         <!-- Brand wordmark + subtle sparkles -->
-        <div class="brand-hero reveal">
+        <div class="brand-hero reveal parallax" data-parallax="0.08">
           <h1 class="wordmark">SERVEGO</h1>
           <div class="sparkles" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i>
@@ -298,14 +304,14 @@
           <a class="badge" href="#"><img src="assets/google-play.svg" alt="Google Play badge" width="28" height="28" loading="lazy" decoding="async"><span data-i18n="btn_google">Get it on Google Play</span></a>
         </div>
         <div style="height:14px"></div>
-        <div class="caption reveal delay-3">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
+        <div class="caption reveal delay-3" data-i18n-html="provider_cta_html">Provider? <a href="#provider">Join ServeGo Provider</a> to get jobs nearby.</div>
       </div>
 
       <div style="padding:18px 18px 18px 0">
-        <div class="phone card reveal delay-1">
+        <div class="phone card reveal delay-1 parallax" data-parallax="0.12">
           <img src="assets/signup.png" alt="ServeGo app screenshot: sign up" />
         </div>
-        <div class="caption" style="margin-top:10px">“Sign up easily with Google or Email.”</div>
+        <div class="caption" style="margin-top:10px" data-i18n="signup_caption">“Sign up easily with Google or Email.”</div>
       </div>
     </div>
   </section>
@@ -322,12 +328,12 @@
   <!-- How it works -->
   <section id="how" class="container section">
     <div class="card reveal" style="padding:28px">
-      <h2 style="margin:.2rem 0 1rem">How it works</h2>
+      <h2 style="margin:.2rem 0 1rem" data-i18n="how_title">How it works</h2>
       <ol style="line-height:1.9;margin:0;padding-left:18px;color:var(--muted)">
-        <li>Browse categories (cleaning, repairs, beauty, more).</li>
-        <li>Pick a provider and time that fits your schedule.</li>
-        <li>Track status and chat in real time.</li>
-        <li>Rate your experience to help the community.</li>
+        <li data-i18n="how_1">Browse categories (cleaning, repairs, beauty, more).</li>
+        <li data-i18n="how_2">Pick a provider and time that fits your schedule.</li>
+        <li data-i18n="how_3">Track status and chat in real time.</li>
+        <li data-i18n="how_4">Rate your experience to help the community.</li>
       </ol>
     </div>
   </section>
@@ -335,8 +341,8 @@
   <!-- About -->
   <section id="about" class="container section">
     <div class="card reveal" style="padding:28px">
-      <h2 style="margin:.2rem 0 .6rem">About ServeGo</h2>
-      <p class="lead">We started ServeGo to make hiring local help as easy and trustworthy as ordering a ride. Our mission is to connect people with verified professionals, create fair opportunities for providers, and keep every interaction transparent and secure.</p>
+      <h2 style="margin:.2rem 0 .6rem" data-i18n="about_title">About ServeGo</h2>
+      <p class="lead" data-i18n="about_body">We started ServeGo to make hiring local help as easy and trustworthy as ordering a ride. Our mission is to connect people with verified professionals, create fair opportunities for providers, and keep every interaction transparent and secure.</p>
     </div>
   </section>
 
@@ -360,7 +366,7 @@
         <a class="btn primary" href="#" data-i18n="btn_get_provider">Get the Provider app</a>
         <a class="btn ghost" href="mailto:support@servego.app" style="margin-left:8px" data-i18n="btn_talk">Talk to us</a>
       </div>
-      <div class="phone contain card provider-shot"><img src="assets/providerhome.PNG" alt="Provider dashboard screenshot" loading="lazy" decoding="async"></div>
+      <div class="phone contain card provider-shot parallax" data-parallax="0.18"><img src="assets/providerhome.PNG" alt="Provider dashboard screenshot" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
@@ -389,18 +395,18 @@
 
   <!-- FAQ -->
   <section id="faq" class="container section faq">
-    <h2 class="reveal" style="margin:.2rem 0 1rem">FAQ</h2>
+    <h2 class="reveal" style="margin:.2rem 0 1rem" data-i18n="faq_title">FAQ</h2>
     <details class="reveal">
-      <summary>Is ServeGo free for users?</summary>
-      <p>Yes. Browsing, booking, and messaging are free for users. Some services may have provider-set fees.</p>
+      <summary data-i18n="faq_q1">Is ServeGo free for users?</summary>
+      <p data-i18n="faq_a1">Yes. Browsing, booking, and messaging are free for users. Some services may have provider-set fees.</p>
     </details>
     <details class="reveal delay-1">
-      <summary>How do I become a provider?</summary>
-      <p>Download the ServeGo Provider app, create your profile, choose categories, and submit basic verification. You'll start receiving nearby jobs after approval.</p>
+      <summary data-i18n="faq_q2">How do I become a provider?</summary>
+      <p data-i18n="faq_a2">Download the ServeGo Provider app, create your profile, choose categories, and submit basic verification. You'll start receiving nearby jobs after approval.</p>
     </details>
     <details class="reveal delay-2">
-      <summary>Which locations do you support?</summary>
-      <p>We're launching city by city. If we're not in your area yet, follow <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener">@servegoofficial</a> for updates.</p>
+      <summary data-i18n="faq_q3">Which locations do you support?</summary>
+      <p class="lead" data-i18n-html="faq_a3_html">We're launching city by city. If we're not in your area yet, follow <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener">@servegoofficial</a> for updates.</p>
     </details>
   </section>
 
@@ -408,13 +414,13 @@
   <div class="band alt">
     <section id="contact" class="container section contact">
       <div class="card reveal" style="padding:26px">
-        <h2 style="margin:.2rem 0 1rem">Contact us</h2>
-        <p class="lead">Have a question or partnership idea? Send us a message — we usually reply within 1–2 business days.</p>
+        <h2 style="margin:.2rem 0 1rem" data-i18n="contact_title">Contact us</h2>
+        <p class="lead" data-i18n="contact_lead">Have a question or partnership idea? Send us a message — we usually reply within 1–2 business days.</p>
         <form action="https://formspree.io/f/YOUR_ID" method="POST">
-          <input class="input" type="text" name="name" placeholder="Your name" required>
-          <input class="input" type="email" name="email" placeholder="Your email" required>
-          <textarea class="input" name="message" rows="5" placeholder="Your message" required></textarea>
-          <button class="btn primary" type="submit">Send message</button>
+          <input class="input" type="text" name="name" placeholder="Your name" required data-i18n-ph="ph_name">
+          <input class="input" type="email" name="email" placeholder="Your email" required data-i18n-ph="ph_email">
+          <textarea class="input" name="message" rows="5" placeholder="Your message" required data-i18n-ph="ph_message"></textarea>
+          <button class="btn primary" type="submit" data-i18n="send_message">Send message</button>
         </form>
         <!-- Previous mailto-based form commented out -->
         <!--
@@ -451,24 +457,24 @@
   <!-- Legal -->
   <div class="band alt sea-bg">
     <section id="legal" class="container section">
-      <h2 style="margin:.2rem 0 1rem">Legal</h2>
-      <p><strong>Trademark.</strong> ServeGo™ is a trademark of ServeGo Technologies. All other trademarks, logos, and brand names appearing on ServeGo are the property of their respective owners. Use of these names, trademarks, and brands does not imply endorsement.</p>
-      <p><strong>Copyright.</strong> © <span id="y"></span> ServeGo. All rights reserved.</p>
+      <h2 style="margin:.2rem 0 1rem" data-i18n="legal_title">Legal</h2>
+      <p data-i18n-html="legal_trademark_html"><strong>Trademark.</strong> ServeGo™ is a trademark of ServeGo Technologies. All other trademarks, logos, and brand names appearing on ServeGo are the property of their respective owners. Use of these names, trademarks, and brands does not imply endorsement.</p>
+      <p data-i18n-html="legal_copyright_html"><strong>Copyright.</strong> © <span id="y"></span> ServeGo. All rights reserved.</p>
 
-      <h3 style="margin:1.2rem 0 .4rem">Terms of Use (summary)</h3>
+      <h3 style="margin:1.2rem 0 .4rem" data-i18n="legal_terms_title">Terms of Use (summary)</h3>
       <ul style="color:var(--muted); line-height:1.8; margin:0 0 1rem 1.2rem">
-        <li>ServeGo is a marketplace connecting users with independent providers; we do not directly supply services.</li>
-        <li>Users and providers are responsible for the accuracy of their profiles, bookings, and communications.</li>
-        <li>No illegal, harmful, or abusive conduct is allowed on the platform.</li>
-        <li>We may suspend or terminate accounts that violate these terms.</li>
+        <li data-i18n="legal_terms_1">ServeGo is a marketplace connecting users with independent providers; we do not directly supply services.</li>
+        <li data-i18n="legal_terms_2">Users and providers are responsible for the accuracy of their profiles, bookings, and communications.</li>
+        <li data-i18n="legal_terms_3">No illegal, harmful, or abusive conduct is allowed on the platform.</li>
+        <li data-i18n="legal_terms_4">We may suspend or terminate accounts that violate these terms.</li>
       </ul>
 
-      <h3 style="margin:1.2rem 0 .4rem">Privacy (summary)</h3>
+      <h3 style="margin:1.2rem 0 .4rem" data-i18n="legal_priv_title">Privacy (summary)</h3>
       <ul style="color:var(--muted); line-height:1.8; margin:0 0 1rem 1.2rem">
-        <li>We collect basic account data (e.g., name, email) and location only to enable bookings and show nearby providers.</li>
-        <li>We use privacy-friendly analytics to improve the app; we do not sell personal data.</li>
-        <li>You can request data deletion at any time via <a href="https://privacy.servego.app/delete-account" style="color:#ffffff; text-decoration:underline">Delete account</a>.</li>
-        <li>Questions? Contact <a href="mailto:support@servego.app" style="color:#ffffff; text-decoration:underline">support@servego.app</a>.</li>
+        <li data-i18n="legal_priv_1">We collect basic account data (e.g., name, email) and location only to enable bookings and show nearby providers.</li>
+        <li data-i18n="legal_priv_2">We use privacy-friendly analytics to improve the app; we do not sell personal data.</li>
+        <li data-i18n-html="legal_priv_3_html">You can request data deletion at any time via <a href="https://privacy.servego.app/delete-account" style="color:#ffffff; text-decoration:underline">Delete account</a>.</li>
+        <li data-i18n-html="legal_priv_4_html">Questions? Contact <a href="mailto:support@servego.app" style="color:#ffffff; text-decoration:underline">support@servego.app</a>.</li>
       </ul>
     </section>
   </div>
@@ -520,7 +526,45 @@
           blog3_s: 'Thanh toán, danh mục và tính năng đang được cùng cộng đồng khám phá.',
           read_post: 'Đọc bài',
           tip_looking: 'Đang tìm dịch vụ?',
-          type_want: 'Bạn muốn đặt dịch vụ?'
+          type_want: 'Bạn muốn đặt dịch vụ?',
+          how_title: 'Cách hoạt động',
+          how_1: 'Duyệt danh mục (vệ sinh, sửa chữa, làm đẹp, v.v.).',
+          how_2: 'Chọn nhà cung cấp và thời gian phù hợp với lịch của bạn.',
+          how_3: 'Theo dõi trạng thái và trò chuyện theo thời gian thực.',
+          how_4: 'Đánh giá trải nghiệm để giúp cộng đồng.',
+          about_title: 'Về ServeGo',
+          about_body: 'Chúng tôi xây dựng ServeGo để việc thuê dịch vụ địa phương trở nên dễ dàng và đáng tin như gọi xe. Sứ mệnh của chúng tôi là kết nối mọi người với các chuyên gia đã xác minh, tạo cơ hội công bằng cho nhà cung cấp và giữ mọi tương tác minh bạch, an toàn.',
+
+          faq_title: 'Câu hỏi thường gặp',
+          faq_q1: 'ServeGo có miễn phí cho người dùng không?',
+          faq_a1: 'Có. Duyệt, đặt lịch và nhắn tin đều miễn phí cho người dùng. Một số dịch vụ có thể có phí do nhà cung cấp đặt.',
+          faq_q2: 'Làm thế nào để trở thành nhà cung cấp?',
+          faq_a2: 'Tải ứng dụng ServeGo Provider, tạo hồ sơ, chọn danh mục và gửi xác minh cơ bản. Bạn sẽ bắt đầu nhận việc gần bạn sau khi được duyệt.',
+          faq_q3: 'Khu vực nào được hỗ trợ?',
+          faq_a3_html: 'Chúng tôi triển khai theo từng thành phố. Nếu hiện chưa có ở khu vực của bạn, hãy theo dõi <a href="https://instagram.com/servegoofficial" target="_blank" rel="noopener">@servegoofficial</a> để nhận cập nhật.',
+
+          contact_title: 'Liên hệ',
+          contact_lead: 'Bạn có câu hỏi hoặc ý tưởng hợp tác? Gửi tin nhắn cho chúng tôi — thường phản hồi trong 1–2 ngày làm việc.',
+          ph_name: 'Tên của bạn',
+          ph_email: 'Email của bạn',
+          ph_message: 'Tin nhắn của bạn',
+          send_message: 'Gửi tin nhắn',
+
+          legal_title: 'Pháp lý',
+          legal_trademark_html: '<strong>Nhãn hiệu.</strong> ServeGo™ là nhãn hiệu của ServeGo Technologies. Mọi nhãn hiệu, logo và tên thương hiệu khác xuất hiện trên ServeGo đều thuộc quyền sở hữu của các bên tương ứng. Việc sử dụng các tên, nhãn hiệu và thương hiệu này không ngụ ý sự bảo trợ.',
+          legal_copyright_html: '<strong>Bản quyền.</strong> © <span id="y"></span> ServeGo. Bảo lưu mọi quyền.',
+          legal_terms_title: 'Điều khoản sử dụng (tóm tắt)',
+          legal_terms_1: 'ServeGo là nền tảng kết nối người dùng với nhà cung cấp độc lập; chúng tôi không trực tiếp cung cấp dịch vụ.',
+          legal_terms_2: 'Người dùng và nhà cung cấp chịu trách nhiệm về độ chính xác của hồ sơ, đặt chỗ và liên lạc.',
+          legal_terms_3: 'Cấm mọi hành vi bất hợp pháp, gây hại hoặc lạm dụng trên nền tảng.',
+          legal_terms_4: 'Chúng tôi có thể đình chỉ hoặc chấm dứt tài khoản vi phạm các điều khoản này.',
+          legal_priv_title: 'Quyền riêng tư (tóm tắt)',
+          legal_priv_1: 'Chúng tôi thu thập dữ liệu tài khoản cơ bản (ví dụ: tên, email) và vị trí chỉ để hỗ trợ đặt lịch và hiển thị nhà cung cấp gần bạn.',
+          legal_priv_2: 'Chúng tôi dùng phân tích thân thiện với quyền riêng tư để cải thiện ứng dụng; không bán dữ liệu cá nhân.',
+          legal_priv_3_html: 'Bạn có thể yêu cầu xoá dữ liệu bất cứ lúc nào qua <a href="https://privacy.servego.app/delete-account" style="color:#ffffff; text-decoration:underline">Xoá tài khoản</a>.',
+          legal_priv_4_html: 'Có câu hỏi? Liên hệ <a href="mailto:support@servego.app" style="color:#ffffff; text-decoration:underline">support@servego.app</a>.',
+          provider_cta_html: 'Nhà cung cấp? <a href="#provider">Tham gia ServeGo Provider</a> để nhận việc gần bạn.',
+          signup_caption: '“Đăng ký nhanh bằng Google hoặc Email.”',
         }
       };
       // Respect saved preference first, then browser language
@@ -534,6 +578,18 @@
           const k = el.getAttribute('data-i18n');
           const val = t.vi[k];
           if(val){ el.textContent = val; }
+        });
+        // Elements that need innerHTML (to keep links/markup)
+        document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+          const k = el.getAttribute('data-i18n-html');
+          const val = t.vi[k];
+          if(val){ el.innerHTML = val; }
+        });
+        // Inputs/textareas that need placeholder i18n
+        document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+          const k = el.getAttribute('data-i18n-ph');
+          const val = t.vi[k];
+          if(val){ el.setAttribute('placeholder', val); }
         });
       }
     })();
@@ -618,4 +674,29 @@
     })();
   </script>
 </body>
+<script>
+  // ===== Subtle scroll parallax for marked elements =====
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = [].slice.call(document.querySelectorAll('[data-parallax]'));
+    if(!els.length) return;
+    var ticking = false;
+    function onScroll(){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY || window.pageYOffset || 0;
+        els.forEach(function(el){
+          var f = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+          // translate a fraction of scroll (clamp for sanity)
+          var offset = Math.max(-60, Math.min(60, -(y * f)));
+          el.style.transform = 'translateY(' + offset + 'px)';
+        });
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll(); // initial
+  })();
+</script>
 </html>
