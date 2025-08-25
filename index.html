@@ -135,6 +135,26 @@
     [data-theme="light"] .badge{background:#f2f6ff; border-color:rgba(0,0,0,.08)}
     [data-theme="light"] .input{background:#ffffff; border-color:rgba(0,0,0,.12); color:var(--text)}
     [data-theme="light"] .footer{border-top-color:rgba(0,0,0,.08)}
+
+    /* Light mode: make the three stat pills use the same blue as the Legal band */
+    [data-theme="light"] .pill-lg{
+      background: linear-gradient(180deg, #6ad5ff 0%, #4aa8ff 100%);
+      border-color: transparent;
+      color: #ffffff;
+    }
+    [data-theme="light"] .pill-lg span{
+      color: rgba(255,255,255,.92);
+    }
+
+    /* Light mode: make the Contact band use the same blue as the Legal band */
+    [data-theme="light"] .band.alt{
+      background: linear-gradient(180deg, #6ad5ff 0%, #4aa8ff 100%);
+      border-top-color: rgba(0,0,0,.08);
+    }
+    [data-theme="light"] .band.alt a{
+      color:#ffffff;
+      text-decoration: underline;
+    }
     /* Theme toggle icon spacing */
     .icon{display:inline-block; width:1.1em; height:1.1em; line-height:1; vertical-align:-2px}
     *{box-sizing:border-box}
